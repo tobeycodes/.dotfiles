@@ -4,17 +4,17 @@ Public dotfiles repository. Currently in the process of migrating from a [privat
 
 ## Requirements
 
-- macOS
-- Homebrew
+- macOS with Homebrew
+- Arch Linux with Pacman
 
 ## Installation
 
 ```bash
 git clone git@github.com:tobeycodes/.dotfiles.git ~/dotfiles
 cd ~/dotfiles
-brew install stow
+brew bundle install # macOS
+pacman -S --needed - < .config/pacman/packages.txt # Arch Linux
 stow .
-brew bundle install
 ```
 
 ## Configurations
