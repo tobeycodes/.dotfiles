@@ -2,10 +2,12 @@ fd
 fish
 fzf
 git
+lazygit
 neovim
 ripgrep
 starship
 stow
 tailscale
+tmux
 unzip
 wget
