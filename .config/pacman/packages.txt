@@ -1,0 +1,11 @@
+fd
+fish
+fzf
+git
+neovim
+ripgrep
+starship
+stow
+tailscale
+unzip
+wget
