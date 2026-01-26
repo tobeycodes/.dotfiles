@@ -1,6 +1,6 @@
 # Dotfiles
 
-Public dotfiles repository. Currently in the process of migrating from a [private repository](https://github.com/tobeycodes/dotfiles-legacy) to this public repository.
+Public dotfiles repository. Currently in the process of migrating from a [private repository](https://github.com/tobeycodes/.dotfiles-legacy) to this public repository.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ Public dotfiles repository. Currently in the process of migrating from a [privat
 ## Installation
 
 ```bash
-git clone git@github.com:tobeycodes/dotfiles.git ~/dotfiles
+git clone git@github.com:tobeycodes/.dotfiles.git ~/dotfiles
 cd ~/dotfiles
 brew install stow
 stow .
