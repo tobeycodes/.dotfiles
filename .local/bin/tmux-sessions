@@ -1,6 +1,6 @@
 #!/bin/bash
 
-root_directory="$HOME/Developer"
+[ -d "$HOME/code" ] && root_directory="$HOME/code" || root_directory="$HOME/Developer"
 selected=$(find "$root_directory" -mindepth 2 -maxdepth 2 -type d | sed "s|$root_directory/||" | fzf)
 
 [ -z "$selected" ] && exit 0
