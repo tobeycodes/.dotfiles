@@ -1,0 +1,15 @@
+#!/bin/bash
+
+root_directory="$HOME/Developer"
+selected=$(find "$root_directory" -mindepth 2 -maxdepth 2 -type d | sed "s|$root_directory/||" | fzf)
+
+[ -z "$selected" ] && exit 0
+
+session_name=$(basename "$selected" | sed 's/^\./_/')
+target_directory="$root_directory/$selected"
+
+[ -n "$TMUX" ] && tmux has-session -t "$session_name" 2>/dev/null && tmux switch-client -t "$session_name" && exit 0
+[ -n "$TMUX" ] && tmux new-session -ds "$session_name" -c "$target_directory" && tmux switch-client -t "$session_name" && exit 0
+
+tmux has-session -t "$session_name" 2>/dev/null && tmux attach -t "$session_name" && exit 0
+tmux new-session -s "$session_name" -c "$target_directory"
