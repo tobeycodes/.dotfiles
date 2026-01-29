@@ -7,3 +7,5 @@ bind \cf '~/.local/bin/tmux-sessions'
 starship init fish | source
 
 fzf --fish | source
+
+eval "$(/opt/homebrew/bin/brew shellenv fish)"
