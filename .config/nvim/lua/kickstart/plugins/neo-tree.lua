@@ -18,12 +18,38 @@ return {
   ---@module 'neo-tree'
   ---@type neotree.Config
   opts = {
+    window = {
+      position = 'float',
+      popup = {
+        title = 'Files',
+      },
+      mappings = {
+        ['P'] = {
+          'toggle_preview',
+          config = {
+            use_float = true,
+            use_image_nvim = true,
+            use_snacks_image = true,
+            title = 'Preview',
+          },
+        },
+      },
+    },
     filesystem = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
         },
       },
+      filtered_items = {
+        hide_dotfiles = false,
+        hide_gitignored = false,
+        never_show = {
+          '.git',
+          '.jj',
+        },
+      },
+      use_libuv_file_watcher = true,
     },
   },
 }
