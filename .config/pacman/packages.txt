@@ -3,8 +3,13 @@ fd
 fish
 fzf
 git
+git-delta
+github-cli
 lazygit
 neovim
+opencode
+paru
+paru-debug
 ripgrep
 starship
 stow
@@ -12,3 +17,4 @@ tailscale
 tmux
 unzip
 wget
+zoxide
