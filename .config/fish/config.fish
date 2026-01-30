@@ -4,8 +4,8 @@ end
 
 bind \cf '~/.local/bin/tmux-sessions'
 
+eval "$(/opt/homebrew/bin/brew shellenv fish)"
+
 starship init fish | source
 
 fzf --fish | source
-
-eval "$(/opt/homebrew/bin/brew shellenv fish)"
