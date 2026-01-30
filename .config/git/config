@@ -1,0 +1,54 @@
+[branch]
+  sort = "-committerdate"
+
+[commit]
+  gpgSign = true
+
+[core]
+  editor = nvim
+  pager = delta
+
+[delta]
+  navigate = true
+  side-by-side = true
+  line-numbers = true
+
+[fetch]
+  prune = true
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[init]
+  defaultBranch = main
+
+[interactive]
+  diffFilter = delta --color-only
+
+[merge]
+  conflictStyle = zdiff3
+
+[pull]
+  rebase = true
+
+[push]
+  autoSetupRemote = true
+
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+
+[rerere]
+  enabled = true
+
+[tag]
+  gpgSign = true
+
+[user]
+  name = Tobey Codes
+  email = tobey@tobey.codes
+  signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIBNURJAfb1+k7XL5/RFAmGnB033/HYzAs4CPppOWbKp
