@@ -6,6 +6,7 @@ git
 git-delta
 github-cli
 lazygit
+mise
 neovim
 opencode
 paru
