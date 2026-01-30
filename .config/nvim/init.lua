@@ -90,8 +90,16 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.opt.shortmess = 'IF'
+
+vim.g.editorconfig = true
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -102,7 +110,7 @@ vim.g.have_nerd_font = false
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -164,11 +172,17 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
+
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic Config & Keymaps
@@ -198,10 +212,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -273,18 +287,18 @@ require('lazy').setup({
   -- options to `gitsigns.nvim`.
   --
   -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
+  -- { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  --   'lewis6991/gitsigns.nvim',
+  --   opts = {
+  --     signs = {
+  --       add = { text = '+' },
+  --       change = { text = '~' },
+  --       delete = { text = '_' },
+  --       topdelete = { text = '‾' },
+  --       changedelete = { text = '~' },
+  --     },
+  --   },
+  -- },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
@@ -404,11 +418,18 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set({ 'n', 'v' }, '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+      vim.keymap.set(
+        'n',
+        '<leader>si',
+        function() builtin.live_grep { search_dirs = { vim.fn.input('Grep in folder: ', '', 'dir') } } end,
+        { desc = '[S]earch by [F]older' }
+      )
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch [C]ommands' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>sc', ':TodoTelescope<CR>', { desc = '[S]earch Todo [C]omments' })
 
       -- This runs on LSP attach per buffer (see main LSP attach function in 'neovim/nvim-lspconfig' config for more info,
       -- it is better explained there). This allows easily switching between pickers if you prefer using something else!
@@ -492,6 +513,8 @@ require('lazy').setup({
 
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
+
+      'b0o/schemastore.nvim',
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -607,6 +630,22 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
+        ts_ls = {},
+        eslint = {},
+        tailwindcss = {},
+        intelephense = {},
+        gopls = {},
+        rust_analyzer = {},
+        clojure_lsp = {},
+        lua_ls = {},
+        jsonls = {
+          settings = {
+            json = {
+              schemas = require('schemastore').json.schemas(),
+              validate = { enable = true },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -621,6 +660,16 @@ require('lazy').setup({
         'lua_ls', -- Lua Language server
         'stylua', -- Used to format Lua code
         -- You can add other tools here that you want Mason to install
+        'prettierd',
+        'eslint_d',
+        'markdownlint',
+        'cssls',
+        'css_variables',
+        'stylelint',
+        'stylelint_lsp',
+        'biome',
+        'cspell',
+        'jsonls',
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -678,23 +727,130 @@ require('lazy').setup({
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
+        local disable_filetypes = {}
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
         else
           return {
-            timeout_ms = 500,
+            timeout_ms = 5000,
             lsp_format = 'fallback',
           }
         end
       end,
+      formatters = {
+        prettierd = function()
+          return {
+            cwd = require('conform.util').root_file {
+              '.prettierrc',
+              '.prettierrc.json',
+              '.prettierrc.yml',
+              '.prettierrc.yaml',
+              '.prettierrc.json5',
+              '.prettierrc.js',
+              'prettier.config.js',
+              '.prettierrc.ts',
+              'prettier.config.ts',
+              '.prettierrc.mjs',
+              'prettier.config.mjs',
+              '.prettierrc.mts',
+              'prettier.config.mts',
+              '.prettierrc.cjs',
+              'prettier.config.cjs',
+              '.prettierrc.cts',
+              'prettier.config.cts',
+              '.prettierrc.toml',
+              '.editorconfig',
+            },
+            condition = function()
+              if vim.fs.root(vim.fn.expand '%:p:h', { 'biome.json' }) then return false end
+
+              return vim.fs.root(vim.fn.expand '%:p:h', {
+                '.prettierrc',
+                '.prettierrc.json',
+                '.prettierrc.yml',
+                '.prettierrc.yaml',
+                '.prettierrc.json5',
+                '.prettierrc.js',
+                'prettier.config.js',
+                '.prettierrc.ts',
+                'prettier.config.ts',
+                '.prettierrc.mjs',
+                'prettier.config.mjs',
+                '.prettierrc.mts',
+                'prettier.config.mts',
+                '.prettierrc.cjs',
+                'prettier.config.cjs',
+                '.prettierrc.cts',
+                'prettier.config.cts',
+                '.prettierrc.toml',
+                '.editorconfig',
+                'package.json',
+              })
+            end,
+          }
+        end,
+        eslint_d = function()
+          return {
+            cwd = require('conform.util').root_file {
+              '.eslintrc',
+              '.eslintrc.js',
+              '.eslintrc.cjs',
+              '.eslintrc.yaml',
+              '.eslintrc.yml',
+              '.eslintrc.json',
+              'package.json',
+              'eslint.config.js',
+              'eslint.config.cjs',
+              'eslint.config.mjs',
+              'eslint.config.ts',
+              'eslint.config.cts',
+              'eslint.config.mts',
+            },
+            condition = function()
+              if vim.fs.root(vim.fn.expand '%:p:h', { 'biome.json' }) then return false end
+
+              return vim.fs.root(vim.fn.expand '%:p:h', {
+                '.eslintrc',
+                '.eslintrc.js',
+                '.eslintrc.cjs',
+                '.eslintrc.yaml',
+                '.eslintrc.yml',
+                '.eslintrc.json',
+                'package.json',
+                'eslint.config.js',
+                'eslint.config.cjs',
+                'eslint.config.mjs',
+                'eslint.config.ts',
+                'eslint.config.cts',
+                'eslint.config.mts',
+              })
+            end,
+          }
+        end,
+        ['biome-check'] = function()
+          return {
+            condition = function()
+              if vim.fs.root(vim.fn.expand '%:p:h', { 'biome.json' }) then return true end
+
+              return false
+            end,
+          }
+        end,
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
+        python = { 'isort', 'black' },
+
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'biome-check', 'prettierd', 'eslint_d' },
+        javascriptreact = { 'biome-check', 'prettierd', 'eslint_d' },
+        typescript = { 'biome-check', 'prettierd', 'eslint_d' },
+        typescriptreact = { 'biome-check', 'prettierd', 'eslint_d' },
+        rust = { 'rustfmt' },
+        go = { 'gofmt' },
+        toml = { 'taplo' },
+        ['*'] = { 'biome-check', 'prettierd' },
       },
     },
   },
@@ -789,6 +945,8 @@ require('lazy').setup({
 
       -- Shows a signature help window while you type arguments for a function
       signature = { enabled = true },
+
+      cmdline = { completion = { ghost_text = { enabled = true } } },
     },
   },
 
@@ -856,10 +1014,55 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      local filetypes = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+      local filetypes = {
+        'bash',
+        'c',
+        'cpp',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'javascript',
+        'typescript',
+        'tsx',
+        'css',
+        'json',
+        'yaml',
+        'rust',
+        'toml',
+      }
+      local pattern = {
+        'bash',
+        'c',
+        'cpp',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'javascript',
+        'javascriptreact',
+        'typescript',
+        'typescriptreact',
+        'tsx',
+        'css',
+        'json',
+        'yaml',
+        'rust',
+        'toml',
+      }
       require('nvim-treesitter').install(filetypes)
       vim.api.nvim_create_autocmd('FileType', {
-        pattern = filetypes,
+        pattern = pattern,
         callback = function() vim.treesitter.start() end,
       })
     end,
@@ -874,18 +1077,18 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
