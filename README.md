@@ -1,11 +1,11 @@
 # Dotfiles
 
-Public dotfiles repository. Currently in the process of migrating from a [private repository](https://github.com/tobeycodes/.dotfiles-legacy) to this public repository.
+Public dotfiles repository.
 
 ## Requirements
 
 - macOS with Homebrew
-- Arch Linux with Pacman
+- Arch Linux with Pacman and Paru
 
 ## Installation
 
@@ -16,10 +16,6 @@ brew bundle install # macOS
 pacman -S --needed - < .config/pacman/packages.txt # Arch Linux
 stow .
 ```
-
-## Configurations
-
-TBD
 
 ## Questions
 
