@@ -9,3 +9,5 @@ eval "$(/opt/homebrew/bin/brew shellenv fish)"
 starship init fish | source
 
 fzf --fish | source
+
+zoxide init fish | source
