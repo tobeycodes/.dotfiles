@@ -1,6 +1,7 @@
 [tools]
 bun = "latest"
 go = "latest"
+gradle = "latest"
 java = "latest"
 node = "lts"
 python = "latest"
