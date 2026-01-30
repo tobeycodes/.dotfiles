@@ -14,12 +14,30 @@ return {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
+    window = {
+      position = 'float',
+      popup = {
+        title = '',
+        border = {
+          style = 'rounded',
+          text = {
+            top = '',
+            top_align = 'center',
+          },
+        },
+      },
+    },
     filesystem = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
         },
       },
+      filtered_items = {
+        hide_dotfiles = false,
+        hide_gitignored = false,
+      },
+      use_libuv_file_watcher = true,
     },
   },
 }
