@@ -6,6 +6,8 @@ set --export ANDROID_HOME $HOME/Library/Android/sdk
 set -gx PATH $ANDROID_HOME/emulator $PATH;
 set -gx PATH $ANDROID_HOME/platform-tools $PATH;
 
+fish_add_path $HOME/.local/share/solana/install/active_release/bin
+
 bind \cf '~/.local/bin/tmux-sessions'
 
 eval "$(/opt/homebrew/bin/brew shellenv fish)"
