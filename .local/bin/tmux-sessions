@@ -5,7 +5,7 @@ selected=$(find "$root_directory" -mindepth 2 -maxdepth 2 -type d | sed "s|$root
 
 [ -z "$selected" ] && exit 0
 
-session_name=$(basename "$selected" | sed 's/^\./_/')
+session_name=$(basename "$selected" | sed 's/^\./_/; s/\./_/g')
 target_directory="$root_directory/$selected"
 
 [ -n "$TMUX" ] && tmux has-session -t "$session_name" 2>/dev/null && tmux switch-client -t "$session_name" >/dev/null && exit 0
