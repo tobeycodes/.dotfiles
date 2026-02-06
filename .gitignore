@@ -1,2 +1,3 @@
 .config/tmux/plugins
 fish_variables
+node_modules
