@@ -9,8 +9,8 @@
         "baseURL": "http://localhost:11434/v1"
       },
       "models": {
-        "gpt-oss:20b": {
-          "name": "GPT-OSS (20B)"
+        "qwen3-coder-next": {
+          "name": "Qwen3 Coder Next"
         }
       }
     }
