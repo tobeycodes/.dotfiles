@@ -1,2 +1,15 @@
 git:
   autoFetch: false
+customCommands:
+  - key: '<c-l>'
+    context: 'files'
+    command: 'lumen draft | pbcopy'
+    loadingText: 'Generating message...'
+  - key: '<c-k>'
+    context: 'files'
+    command: 'lumen draft -c {{.Form.Context | quote}} | pbcopy'
+    loadingText: 'Generating message...'
+    prompts:
+      - type: 'input'
+        title: 'Context'
+        key: 'Context'
