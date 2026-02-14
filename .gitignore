@@ -1,3 +1,4 @@
 .config/tmux/plugins
 fish_variables
 node_modules
+secrets.fish
