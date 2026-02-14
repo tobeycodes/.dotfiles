@@ -40,6 +40,14 @@
 
 [merge]
   conflictStyle = zdiff3
+  tool = nvimdiff
+
+[mergetool]
+  prompt = false
+  keepBackup = false
+
+[mergetool "nvimdiff"]
+  layout = "LOCAL,BASE,REMOTE / MERGED"
 
 [pull]
   rebase = true
