@@ -14,6 +14,15 @@
   line-numbers = true
   syntax-theme = tokyonight_night
 
+[diff]
+  tool = critique
+
+[difftool "critique"]
+  cmd = critique difftool \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+  prompt = false
+
 [fetch]
   prune = true
 
