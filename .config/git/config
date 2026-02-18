@@ -78,6 +78,6 @@
   gpgSign = true
 
 [user]
-  name = Tobey Codes
+  name = tobey
   email = tobey@tobey.codes
   signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIBNURJAfb1+k7XL5/RFAmGnB033/HYzAs4CPppOWbKp
