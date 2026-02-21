@@ -21,6 +21,11 @@
       "url": "https://mcp.context7.com/mcp",
       "enabled": true
     },
+    "grep_app": {
+      "type": "remote",
+      "url": "https://mcp.grep.app",
+      "enabled": true
+    },
     "figma": {
       "type": "remote",
       "url": "http://127.0.0.1:3845/mcp",
