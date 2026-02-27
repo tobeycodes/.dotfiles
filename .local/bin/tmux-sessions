@@ -1,15 +1,22 @@
 #!/bin/bash
 
+tmux_open() {
+  local target_directory="$1"
+  local session_name
+  session_name=$(basename "$target_directory" | sed 's/^\./_/; s/\./_/g')
+  [ -n "$TMUX" ] && tmux has-session -t "$session_name" 2>/dev/null && tmux switch-client -t "$session_name" >/dev/null && exit 0
+  [ -n "$TMUX" ] && tmux new-session -ds "$session_name" -c "$target_directory" && tmux switch-client -t "$session_name" >/dev/null && exit 0
+  tmux has-session -t "$session_name" 2>/dev/null && tmux attach -t "$session_name" >/dev/null && exit 0
+  tmux new-session -s "$session_name" -c "$target_directory" >/dev/null
+  exit 0
+}
+
+if [ -n "$1" ]; then
+  tmux_open "$1"
+fi
+
 [ -d "$HOME/code" ] && root_directory="$HOME/code" || root_directory="$HOME/Developer"
 selected=$(find "$root_directory" -mindepth 2 -maxdepth 2 -type d | sed "s|$root_directory/||" | fzf)
-
 [ -z "$selected" ] && exit 0
 
-session_name=$(basename "$selected" | sed 's/^\./_/; s/\./_/g')
-target_directory="$root_directory/$selected"
-
-[ -n "$TMUX" ] && tmux has-session -t "$session_name" 2>/dev/null && tmux switch-client -t "$session_name" >/dev/null && exit 0
-[ -n "$TMUX" ] && tmux new-session -ds "$session_name" -c "$target_directory" && tmux switch-client -t "$session_name" >/dev/null && exit 0
-
-tmux has-session -t "$session_name" 2>/dev/null && tmux attach -t "$session_name" >/dev/null && exit 0
-tmux new-session -s "$session_name" -c "$target_directory" >/dev/null
+tmux_open "$root_directory/$selected"
