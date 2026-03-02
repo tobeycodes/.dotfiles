@@ -4,6 +4,7 @@ font-family="JetBrainsMono NFM Regular"
 font-size=15
 cursor-style-blink=true
 cursor-style=block
+desktop-notifications = true
 macos-option-as-alt=true
 macos-titlebar-style=hidden
 mouse-hide-while-typing=true
