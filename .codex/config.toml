@@ -4,3 +4,12 @@ notify = [
   "-e",
   "display notification \"Codex needs your attention!\" with title \"Codex\" sound name \"Glass\""
 ]
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp"
+
+[mcp_servers.grep_app]
+url = "https://mcp.grep.app"
+
+[mcp_servers.figma]
+url = "http://127.0.0.1:3845/mcp"
