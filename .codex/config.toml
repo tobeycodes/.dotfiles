@@ -1,0 +1,6 @@
+model = "gpt-5.3-codex"
+notify = [
+  "osascript",
+  "-e",
+  "display notification \"Codex needs your attention!\" with title \"Codex\" sound name \"Glass\""
+]
