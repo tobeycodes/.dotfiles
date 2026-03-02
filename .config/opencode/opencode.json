@@ -1,6 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "tokyonight",
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
