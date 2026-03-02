@@ -1,0 +1,22 @@
+{
+  "shell": "fish",
+  "enableChatInputCompletions": true,
+  "autoUpdate": true,
+  "notificationMode": "desktop_notification",
+  "vimMode": true,
+  "model": "opus4.6",
+  "mcpServers": {
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "grep_app": {
+      "type": "http",
+      "url": "https://mcp.grep.app"
+    },
+    "figma": {
+      "type": "http",
+      "url": "http://127.0.0.1:3845/mcp"
+    }
+  }
+}
