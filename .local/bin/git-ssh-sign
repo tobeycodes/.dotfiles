@@ -1,0 +1,9 @@
+#!/bin/sh
+
+OP_SSH_SIGN="/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+if [ -x "$OP_SSH_SIGN" ]; then
+  exec "$OP_SSH_SIGN" "$@"
+fi
+
+exec ssh-keygen "$@"
