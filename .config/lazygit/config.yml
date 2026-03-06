@@ -2,6 +2,9 @@ git:
   autoFetch: false
   pagers:
     - pager: delta --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+services:
+  'tobey': 'github:github.com'
+  'squads': 'github:github.com'
 customCommands:
   - key: '<c-l>'
     context: 'files'
