@@ -80,4 +80,8 @@
 [user]
   name = tobey
   email = tobey@tobey.codes
+  github = tobeycodes
   signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIBNURJAfb1+k7XL5/RFAmGnB033/HYzAs4CPppOWbKp
+
+[includeIf "gitdir:~/code/squads-treasury/"]
+  path = "~/.config/git/work_config"
