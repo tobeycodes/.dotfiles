@@ -3,9 +3,6 @@
   "autoupdate": false,
   "share": "disabled",
   "autoshare": false,
-  "server": {
-    "port": 4096
-  },
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
