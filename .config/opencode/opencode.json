@@ -1,6 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
+  "share": "disabled",
+  "autoshare": false,
   "server": {
     "port": 4096
   },
