@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 OP_SSH_SIGN="/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
