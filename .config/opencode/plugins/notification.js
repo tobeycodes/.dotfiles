@@ -8,7 +8,7 @@ export const NotificationPlugin = async ({
   return {
     event: async ({ event }) => {
       if (event.type === "session.idle") {
-        await $`osascript -e 'display notification "OpenCode needs your attention" with title "OpenCode" sound name "Glass"'`;
+        await $`notify "OpenCode"`;
       }
     },
   };

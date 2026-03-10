@@ -1,9 +1,5 @@
 model = "gpt-5.4"
-notify = [
-  "osascript",
-  "-e",
-  "display notification \"Codex needs your attention!\" with title \"Codex\" sound name \"Glass\""
-]
+notify = ["notify", "Codex"]
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
