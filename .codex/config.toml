@@ -1,5 +1,6 @@
-model = "gpt-5.4"
+model = "gpt-5.3-codex"
 notify = ["notify", "Codex"]
+model_reasoning_effort = "medium"
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
