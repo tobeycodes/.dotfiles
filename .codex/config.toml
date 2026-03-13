@@ -10,3 +10,6 @@ url = "https://mcp.grep.app"
 
 [mcp_servers.figma]
 url = "http://127.0.0.1:3845/mcp"
+
+[mcp_servers.auggie]
+url = "https://api.augmentcode.com/mcp"
