@@ -1,4 +1,4 @@
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 notify = ["notify", "Codex"]
 model_reasoning_effort = "medium"
 
@@ -13,3 +13,6 @@ url = "http://127.0.0.1:3845/mcp"
 
 [mcp_servers.auggie]
 url = "https://api.augmentcode.com/mcp"
+
+[notice.model_migrations]
+"gpt-5.3-codex" = "gpt-5.4"
