@@ -2,6 +2,7 @@
   "dependencies": {
     "@augmentcode/auggie": "^0.18.1",
     "@mariozechner/pi-coding-agent": "^0.54.2",
-    "critique": "^0.1.123"
+    "critique": "^0.1.123",
+    "portless": "^0.7.1"
   }
 }
