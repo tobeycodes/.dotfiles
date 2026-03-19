@@ -4,7 +4,7 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "@opencode-ai/plugin": "1.2.25",
+        "@opencode-ai/plugin": "*",
       },
     },
   },
