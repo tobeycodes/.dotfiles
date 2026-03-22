@@ -12,7 +12,7 @@ Public dotfiles repository.
 ```bash
 git clone git@github.com:tobeycodes/.dotfiles.git ~/dotfiles
 cd ~/dotfiles
-brew bundle install # macOS
+brew bundle install --file=.config/homebrew/bundle # macOS
 pacman -S --needed - < .config/pacman/packages.txt # Arch Linux
 stow .
 ```
