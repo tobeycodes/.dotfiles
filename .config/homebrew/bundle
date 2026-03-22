@@ -56,4 +56,3 @@ cask "spotify"
 cask "telegram"
 cask "tradingview"
 cask "whatsapp"
-mas "Tailscale", id: 1475387142
