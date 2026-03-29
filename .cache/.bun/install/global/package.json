@@ -2,8 +2,9 @@
   "dependencies": {
     "@augmentcode/auggie": "^0.20.1",
     "@mariozechner/pi-coding-agent": "^0.62.0",
-    "@open-wallet-standard/core": "^1.0.0",
-    "critique": "^0.1.129",
-    "portless": "^0.7.2"
+    "@open-wallet-standard/core": "^1.1.2",
+    "critique": "^0.1.135",
+    "portless": "^0.7.2",
+    "skills": "^1.4.6"
   }
 }
