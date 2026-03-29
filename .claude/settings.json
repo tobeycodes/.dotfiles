@@ -11,5 +11,16 @@
         ]
       }
     ]
+  },
+  "extraKnownMarketplaces": {
+    "plannotator": {
+      "source": {
+        "source": "github",
+        "repo": "backnotprop/plannotator"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "plannotator@plannotator": true
   }
 }

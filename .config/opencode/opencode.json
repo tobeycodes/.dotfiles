@@ -38,5 +38,6 @@
       "url": "https://api.augmentcode.com/mcp",
       "enabled": true
     }
-  }
+  },
+  "plugin": ["@plannotator/opencode@latest"]
 }
