@@ -1,5 +1,6 @@
 git:
   autoFetch: false
+  overrideGpg: true
   pagers:
     - pager: delta --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
 services:
