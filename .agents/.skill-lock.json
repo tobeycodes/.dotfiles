@@ -89,13 +89,7 @@
     "findSkillsPrompt": true
   },
   "lastSelectedAgents": [
-    "amp",
-    "cline",
     "codex",
-    "cursor",
-    "gemini-cli",
-    "github-copilot",
-    "kimi-cli",
     "opencode",
     "augment",
     "claude-code"
