@@ -12,6 +12,9 @@
       }
     ]
   },
+  "enabledPlugins": {
+    "plannotator@plannotator": true
+  },
   "extraKnownMarketplaces": {
     "plannotator": {
       "source": {
@@ -19,8 +22,5 @@
         "repo": "backnotprop/plannotator"
       }
     }
-  },
-  "enabledPlugins": {
-    "plannotator@plannotator": true
   }
 }
