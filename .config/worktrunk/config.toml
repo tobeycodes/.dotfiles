@@ -31,6 +31,5 @@ server = """
 cd {{ worktree_path }}/local-dev-env && \
 TILT_PROJECT_NAME=local-dev-env-{{ branch }} tilt down 2>/dev/null || true
 lsof -ti :{{ ('api-' ~ branch) | hash_port }} -sTCP:LISTEN | xargs kill 2>/dev/null || true
-lsof -ti :{{ ('internal-' ~ branch) | hash_port }} -sTCP:LISTEN | xargs kill 2>/dev/null || true
 lsof -ti :{{ ('web-' ~ branch) | hash_port }} -sTCP:LISTEN | xargs kill 2>/dev/null || true
 """
