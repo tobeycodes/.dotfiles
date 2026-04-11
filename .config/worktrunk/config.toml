@@ -1,0 +1,36 @@
+["post-start"]
+create = "mise trust"
+tmux = "~/.local/bin/tmux-sessions {{ worktree_path }}"
+env = """
+wt step copy-ignored && \
+doppler setup --no-interactive && \
+cat > .env.fish <<'EOF'
+set -gx API_PORT {{ ('api-' ~ branch) | hash_port }}
+set -gx API_INTERNAL_PORT {{ ('internal-' ~ branch) | hash_port }}
+set -gx API_PROXY_PORT {{ ('proxy-' ~ branch) | hash_port }}
+set -gx FRONTEND_URL http://localhost:{{ ('web-' ~ branch) | hash_port }}
+set -gx WEB_PORT {{ ('web-' ~ branch) | hash_port }}
+set -gx STORYBOOK_PORT {{ ('storybook-' ~ branch) | hash_port }}
+set -gx VITE_API_URL https://localhost:{{ ('proxy-' ~ branch) | hash_port }}
+set -gx TILT_PORT {{ ('tilt-' ~ branch) | hash_port }}
+set -gx TILT_PROJECT_NAME local-dev-env-{{ branch }}
+set -gx POSTGRES_PORT {{ ('postgres-' ~ branch) | hash_port }}
+set -gx LEGACY_DB_PORT {{ ('legacy-db-' ~ branch) | hash_port }}
+set -gx REDIS_PORT {{ ('redis-' ~ branch) | hash_port }}
+set -gx ELECTRIC_PORT {{ ('electric-' ~ branch) | hash_port }}
+set -gx TEMPORAL_PORT {{ ('temporal-' ~ branch) | hash_port }}
+set -gx TEMPORAL_UI_PORT {{ ('temporal-ui-' ~ branch) | hash_port }}
+set -gx TEMPORAL_ADDRESS http://localhost:{{ ('temporal-' ~ branch) | hash_port }}
+set -gx POSTGRES_URL postgres://user:password@localhost:{{ ('postgres-' ~ branch) | hash_port }}/db
+set -gx REDIS_URL redis://localhost:{{ ('redis-' ~ branch) | hash_port }}
+set -gx ELECTRIC_URL http://localhost:{{ ('electric-' ~ branch) | hash_port }}
+EOF
+"""
+[pre-remove]
+server = """
+cd {{ worktree_path }}/local-dev-env && \
+TILT_PROJECT_NAME=local-dev-env-{{ branch }} tilt down 2>/dev/null || true
+lsof -ti :{{ ('api-' ~ branch) | hash_port }} -sTCP:LISTEN | xargs kill 2>/dev/null || true
+lsof -ti :{{ ('internal-' ~ branch) | hash_port }} -sTCP:LISTEN | xargs kill 2>/dev/null || true
+lsof -ti :{{ ('web-' ~ branch) | hash_port }} -sTCP:LISTEN | xargs kill 2>/dev/null || true
+"""
