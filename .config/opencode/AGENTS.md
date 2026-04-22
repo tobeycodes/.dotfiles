@@ -36,6 +36,7 @@
 - **Make illegal states unrepresentable**; prefer ADTs/discriminated unions over boolean flags and loosely optional fields
 - Prefer existing helpers/patterns over new abstractions
 - **Abstractions**: consciously constrained, pragmatically parameterised, documented when non-obvious
+- **Always use braces**: for `if`, `else`, `for`, `while`, and `do` statements, even for single-line bodies
 
 ## Error Handling
 
