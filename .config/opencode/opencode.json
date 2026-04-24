@@ -17,6 +17,7 @@
       }
     }
   },
+  "lsp": true,
   "mcp": {
     "context7": {
       "type": "remote",
