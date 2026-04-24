@@ -1,4 +1,8 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "theme": "tokyonight"
+  "theme": "tokyonight",
+  "scroll_acceleration": {
+    "enabled": true
+  }
 }
+
