@@ -69,12 +69,11 @@
 
 - Treat work as incomplete until the requested deliverables are done or explicitly marked blocked
 - Before finishing, verify correctness, grounding, formatting, and safety using the smallest relevant check
-- Verify changed behavior with the smallest relevant check: test, typecheck, lint, or build
+- Do not verify changed behavior with checks unless asked: test, typecheck, lint, or build
 - Write tests that verify semantically correct behavior
 - **Failing tests are acceptable** when they expose a real bug and the test is correct
 - Do not change or delete tests just to make the suite pass
 - If you cannot verify, say exactly what was not run and why
-- Do not run dev or build commands as part of testing unless explicitly requested
 - Do not run npx or similar package manager commands or run executables directly from node_modules/
 
 ## Grounding
