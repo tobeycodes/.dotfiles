@@ -1,3 +1,4 @@
 {
-  "provider": "opencode-zen"
+  "provider": "opencode-zen",
+  "model": "glm-5"
 }
