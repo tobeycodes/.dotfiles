@@ -38,6 +38,14 @@
       "type": "remote",
       "url": "https://api.augmentcode.com/mcp",
       "enabled": true
+    },
+    "uidotsh": {
+      "type": "remote",
+      "url": "https://ui.sh/mcp?agent=opencode",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer {env:UIDOTSH_TOKEN}"
+      }
     }
   },
   "plugin": ["@plannotator/opencode@latest"]
