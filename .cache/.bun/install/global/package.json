@@ -1,13 +1,11 @@
 {
   "dependencies": {
-    "@augmentcode/auggie": "^0.24.0",
-    "@kitlangton/ghui": "^0.6.0",
+    "@augmentcode/auggie": "^0.27.2",
+    "@kitlangton/ghui": "^0.7.1",
     "@mariozechner/pi-coding-agent": "^0.73.1",
-    "@open-wallet-standard/core": "^1.3.2",
-    "@plannotator/pi-extension": "npm:@plannotator/pi-extension",
-    "critique": "^0.1.139",
-    "eas-cli": "^18.8.1",
-    "portless": "^0.10.3",
-    "skills": "^1.5.1"
+    "critique": "^0.1.140",
+    "eas-cli": "^19.0.1",
+    "portless": "^0.13.0",
+    "skills": "^1.5.7"
   }
 }
