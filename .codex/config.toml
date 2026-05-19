@@ -1,6 +1,9 @@
-model = "gpt-5.4"
+model = "gpt-5.5"
 notify = ["notify", "Codex"]
 model_reasoning_effort = "medium"
+
+[features]
+hooks = true
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
@@ -14,5 +17,9 @@ url = "http://127.0.0.1:3845/mcp"
 [mcp_servers.auggie]
 url = "https://api.augmentcode.com/mcp"
 
-[notice.model_migrations]
-"gpt-5.3-codex" = "gpt-5.4"
+[mcp_servers.uidotsh]
+url = "https://ui.sh/mcp?agent=codex"
+bearer_token_env_var = "UIDOTSH_TOKEN"
+
+[mcp_servers.uidotsh.tools.uidotsh_fetch]
+approval_mode = "approve"
