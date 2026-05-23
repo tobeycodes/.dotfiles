@@ -279,3 +279,7 @@ run = "move-node-to-workspace W"
 [[on-window-detected]]
 if.app-id = "com.apple.MobileSMS"
 run = "move-node-to-workspace M"
+
+[[on-window-detected]]
+if.app-id = "com.TablePro"
+run = "layout floating"
