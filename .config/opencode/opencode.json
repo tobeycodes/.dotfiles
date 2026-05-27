@@ -32,20 +32,45 @@
     "figma": {
       "type": "remote",
       "url": "http://127.0.0.1:3845/mcp",
-      "enabled": true
+      "enabled": false
     },
     "auggie": {
       "type": "remote",
       "url": "https://api.augmentcode.com/mcp",
-      "enabled": true
+      "enabled": false
     },
     "uidotsh": {
       "type": "remote",
       "url": "https://ui.sh/mcp?agent=opencode",
-      "enabled": true,
+      "enabled": false,
       "headers": {
         "Authorization": "Bearer {env:UIDOTSH_TOKEN}"
       }
+    },
+    "codegraph": {
+      "type": "local",
+      "command": ["codegraph", "serve", "--mcp"],
+      "enabled": true
+    },
+    "tablepro": {
+      "type": "local",
+      "command": ["/Applications/TablePro.app/Contents/MacOS/tablepro-mcp"],
+      "enabled": false
+    },
+    "linear": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp",
+      "enabled": false
+    },
+    "posthog": {
+      "type": "remote",
+      "url": "https://mcp.posthog.com/mcp",
+      "enabled": false
+    },
+    "incident": {
+      "type": "remote",
+      "url": "https://mcp.incident.io/mcp",
+      "enabled": false
     }
   },
   "plugin": ["@plannotator/opencode@latest"]
