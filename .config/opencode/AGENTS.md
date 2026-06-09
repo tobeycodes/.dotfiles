@@ -95,7 +95,19 @@
 - Prefer dedicated read/search/edit tools over shell when available
 - Batch independent reads/searches; parallelize when safe
 - Read enough context before editing; avoid thrashing
-- Prefer CodeGraph for structural code questions when available: definitions, callers, callees, impact, signatures, and focused task context
+
+## MCPs
+
+- Use Context7 when current library/framework docs are needed before implementing against an external API
+- Use grep.app for real-world public code examples when docs are insufficient or usage patterns are unclear
+- Use Figma only when design-file context is needed for UI implementation or review
+- Use ui.sh when designing or building user interfaces, especially for guidance on color, spacing, typography, accessibility, and interactive design iteration
+- Use CodeGraph for structural code questions: definitions, callers, callees, impact, signatures, and focused task context
+- Use TablePro only when local database/table inspection is needed
+- Use Linear only when issue/project context or updates are explicitly needed
+- Use PostHog only when product analytics context is explicitly needed
+- Use incident.io only when incident/status context is explicitly needed
+- Use Railway only when deployment, service, or environment context is explicitly needed
 
 ## Scope Control
 
