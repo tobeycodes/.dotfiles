@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@augmentcode/auggie": "^0.27.2",
     "@colbymchenry/codegraph": "^0.9.3",
     "@kitlangton/ghui": "^0.7.1",
     "@mariozechner/pi-coding-agent": "^0.73.1",
