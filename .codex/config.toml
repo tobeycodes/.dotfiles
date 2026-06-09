@@ -21,5 +21,24 @@ url = "https://api.augmentcode.com/mcp"
 url = "https://ui.sh/mcp?agent=codex"
 bearer_token_env_var = "UIDOTSH_TOKEN"
 
+[mcp_servers.codegraph]
+command = "codegraph"
+args = ["serve", "--mcp"]
+
+[mcp_servers.tablepro]
+command = "/Applications/TablePro.app/Contents/MacOS/tablepro-mcp"
+
+[mcp_servers.linear]
+url = "https://mcp.linear.app/mcp"
+
+[mcp_servers.posthog]
+url = "https://mcp.posthog.com/mcp"
+
+[mcp_servers.incident]
+url = "https://mcp.incident.io/mcp"
+
+[mcp_servers.railway]
+url = "https://mcp.railway.com"
+
 [mcp_servers.uidotsh.tools.uidotsh_fetch]
 approval_mode = "approve"
