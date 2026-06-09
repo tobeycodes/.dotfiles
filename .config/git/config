@@ -85,3 +85,6 @@
 
 [includeIf "gitdir:~/code/squads-treasury/"]
   path = "~/.config/git/work_config"
+
+[includeIf "gitdir:~/code/squads-fuse/"]
+  path = "~/.config/git/work_config"
