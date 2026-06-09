@@ -96,6 +96,7 @@
 - Batch independent reads/searches; parallelize when safe
 - Read enough context before editing; avoid thrashing
 - After edits, run a lightweight verification step when relevant
+- Prefer CodeGraph for structural code questions when available: definitions, callers, callees, impact, signatures, and focused task context
 
 ## Scope Control
 
