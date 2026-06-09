@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "@colbymchenry/codegraph": "^0.9.3",
+    "@colbymchenry/codegraph": "^0.9.9",
     "@kitlangton/ghui": "^0.7.1",
     "@mariozechner/pi-coding-agent": "^0.73.1",
     "critique": "^0.1.140",
-    "eas-cli": "^19.0.1",
-    "portless": "^0.13.0",
-    "skills": "^1.5.7"
+    "eas-cli": "^19.1.0",
+    "portless": "^0.13.1",
+    "skills": "^1.5.10"
   }
 }
