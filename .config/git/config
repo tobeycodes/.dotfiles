@@ -83,6 +83,9 @@
   github = tobeycodes
   signingKey = "~/.ssh/tobey.pub"
 
+[gitbutler]
+  signCommits = true
+
 [includeIf "gitdir:~/code/squads-treasury/"]
   path = "~/.config/git/work_config"
 
