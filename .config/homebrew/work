@@ -1,55 +1,103 @@
-tap "anomalyco/tap"
-tap "felixkratz/formulae"
-tap "jnsahaj/lumen"
-tap "nikitabobko/tap"
+tap "anomalyco/tap", trusted: true
+tap "felixkratz/formulae", trusted: true
+tap "jnsahaj/lumen", trusted: true
+tap "nikitabobko/tap", trusted: true
+# Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU multiple precision arithmetic library
 brew "gmp"
+# GNU compiler collection
 brew "gcc"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Lazier way to manage everything docker
 brew "lazydocker"
+# Simple terminal UI for git commands
 brew "lazygit"
+# YAML Parser
 brew "libyaml"
+# Utility for directing compilation
 brew "make"
+# Mac App Store command-line interface
 brew "mas"
+# Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Cross-shell prompt for astronauts
 brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Terminal multiplexer
 brew "tmux"
+# Parser generator tool
 brew "tree-sitter-cli"
+# Extraction utility for .zip compressed archives
 brew "unzip"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# CLI for Git worktree management, designed for parallel AI agent workflows
 brew "worktrunk"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode"
+# Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
+# lumen is a command-line tool that can show pretty diff, generate commit messages with AI, summarise diffs / commits, and more without requiring an API key.
 brew "jnsahaj/lumen/lumen"
+# Password manager that keeps all passwords secure behind one password
 cask "1password"
+# AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
+# Chromium based browser
 cask "arc"
+# Terminal-based AI coding assistant
 cask "claude-code"
+# OpenAI's coding agent that runs in your terminal
 cask "codex"
+# Collaborative team software
 cask "figma"
+# Web browser
 cask "firefox"
 cask "font-jetbrains-mono-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Web browser
 cask "google-chrome"
+# App to manage software development and track bugs
 cask "linear"
+# Multi-platform web browser
 cask "microsoft-edge"
+# App to write, plan, collaborate, and get organised
 cask "notion"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# AI coding agent desktop client
 cask "opencode-desktop"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Team communication and collaboration software
 cask "slack"
+# Native GUI tool for relational databases
 cask "tableplus"
+# Remote pair programming app
 cask "tuple"
 mas "Developer", id: 640199958
 mas "Xcode", id: 497799835

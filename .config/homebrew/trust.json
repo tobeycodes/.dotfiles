@@ -1,0 +1,8 @@
+{
+  "trustedtaps": [
+    "anomalyco/tap",
+    "felixkratz/formulae",
+    "jnsahaj/lumen",
+    "nikitabobko/tap"
+  ]
+}
