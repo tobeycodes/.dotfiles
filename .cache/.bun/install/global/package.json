@@ -5,6 +5,7 @@
     "@kitlangton/ghui": "^0.7.1",
     "critique": "^0.1.140",
     "eas-cli": "^20.1.0",
+    "openlogs": "^0.0.4",
     "portless": "^0.14.0",
     "skills": "^1.5.10"
   }
