@@ -3,6 +3,9 @@
     "anomalyco/tap",
     "felixkratz/formulae",
     "jnsahaj/lumen",
-    "nikitabobko/tap"
+    "nikitabobko/tap",
+    "teamookla/speedtest",
+    "txtx/taps",
+    "withgraphite/tap"
   ]
 }

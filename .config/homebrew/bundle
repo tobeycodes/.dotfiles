@@ -1,127 +1,244 @@
-tap "anomalyco/tap"
-tap "felixkratz/formulae"
-tap "jnsahaj/lumen"
-tap "nikitabobko/tap"
-tap "teamookla/speedtest"
-tap "txtx/taps"
-tap "withgraphite/tap"
-brew "openssl@3"
+tap "anomalyco/tap", trusted: true
+tap "felixkratz/formulae", trusted: true
+tap "jnsahaj/lumen", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "teamookla/speedtest", trusted: true
+tap "txtx/taps", trusted: true
+tap "withgraphite/tap", trusted: true
+# Portable Foreign Function Interface library
 brew "libffi"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Library for command-line editing
 brew "readline"
+# General-purpose data compression with high compression ratio
 brew "xz"
+# Browser automation CLI for AI agents
 brew "agent-browser"
+# Automatic configure script builder
 brew "autoconf"
+# Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Official Amazon AWS command-line interface
 brew "awscli"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# GNU binary tools for native development
 brew "binutils"
+# Parser generator
 brew "bison"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# GNU multiple precision arithmetic library
 brew "gmp"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Load/unload environment variables based on $PWD
 brew "direnv"
+# Command-line tool for DigitalOcean
 brew "doctl"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# Download assets from a commit, branch, or tag of GitHub repositories
 brew "fetch"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU awk utility
 brew "gawk"
+# GNU compiler collection
 brew "gcc"
+# GNU database manager
 brew "gdbm"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Open-source GitLab command-line tool
 brew "glab"
+# Git-compatible distributed version control system
 brew "jj"
+# Handy way to save and run project-specific commands
 brew "just"
+# Lazier way to manage everything docker
 brew "lazydocker"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Postgres C API library
 brew "libpq"
+# YAML Parser
 brew "libyaml"
+# Find what models run on your hardware
 brew "llmfit"
+# Next-gen compiler infrastructure
 brew "llvm"
+# Text-based web browser
 brew "lynx"
+# Utility for directing compilation
 brew "make"
+# Mac App Store command-line interface
 brew "mas"
+# Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Deep clean and optimize your Mac
 brew "mole"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Libraries for security-enabled client and server applications
 brew "nss"
+# Create, run, and share large language models (LLMs)
 brew "ollama"
+# Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
+# Develop and deploy code with zero configuration
 brew "railway"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Acoustic spectrum analyser
 brew "spek"
+# Cross-shell prompt for astronauts
 brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Version control system designed to be a better CVS
 brew "subversion"
+# Terminal multiplexer
 brew "tmux"
+# CLI tool that moves files or folder to the trash
 brew "trash"
+# Extraction utility for .zip compressed archives
 brew "unzip"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Watch files and take action when they change
 brew "watchman"
+# Internet file retriever
 brew "wget"
+# CLI for Git worktree management, designed for parallel AI agent workflows
 brew "worktrunk"
+# Access X11 clipboards from the command-line
 brew "xclip"
+# Command-line program for getting and setting the contents of the X selection
 brew "xsel"
+# Feature-rich command-line audio/video downloader
 brew "yt-dlp"
+# Programming language designed for robustness, optimality, and clarity
 brew "zig"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# UNIX shell (command interpreter)
 brew "zsh"
+# The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode"
+# Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
+# lumen is a command-line tool that can show pretty diff, generate commit messages with AI, summarise diffs / commits, and more without requiring an API key.
 brew "jnsahaj/lumen/lumen"
+# Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
+# CLI tool for managing contract deployments on any blockchain
 brew "txtx/taps/surfpool"
+# Allows you to manage your stacked changes and submit them for review on GitHub
 brew "withgraphite/tap/graphite"
+# Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Sound and music editor
 cask "ableton-live-suite"
+# AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
+# Tools for building Android applications
 cask "android-studio"
+# Chromium based browser
 cask "arc"
+# Multi-track audio editor and recorder
 cask "audacity"
+# Screen recording software
 cask "cap"
+# Video editing and image design platform
 cask "capcut"
-cask "claude-code"
+# Terminal-based AI coding assistant
+cask "claude-code@latest"
+# OpenAI's coding agent that runs in your terminal
 cask "codex"
+# Voice and text chat software
 cask "discord"
+# Collaborative team software
 cask "figma"
+# Web browser
 cask "firefox"
 cask "font-jetbrains-mono-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Web browser
 cask "google-chrome"
+# AI-powered notepad for meetings
 cask "granola"
+# Speech to text application
 cask "handy"
+# Open-source keystroke visualiser
 cask "keycastr"
+# App to manage software development and track bugs
 cask "linear"
+# Multi-platform web browser
 cask "microsoft-edge"
+# Harmonic mixing for DJs and music producers
 cask "mixed-in-key"
+# Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# App to write, plan, collaborate, and get organised
 cask "notion"
+# Open-source software for live streaming and screen recording
 cask "obs"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Get up and running with large language models locally
 cask "ollama-app"
+# AI coding agent desktop client
 cask "opencode-desktop"
+# Replacement for Docker Desktop
 cask "orbstack"
+# Bridges Proton Mail to email clients supporting IMAP and SMTP protocols
 cask "proton-mail-bridge"
+# VPN client focusing on security
 cask "protonvpn"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Free Dj app to prepare and manage your music files
 cask "rekordbox"
+# Instant messaging application focusing on security
 cask "signal"
+# Team communication and collaboration software
 cask "slack"
+# Music streaming service
 cask "spotify"
+# Video game digital distribution service
 cask "steam"
+# Open-source media center
 cask "stremio"
+# Native GUI tool for relational databases
 cask "tableplus"
+# Native database client for many database types
 cask "tablepro"
+# Mesh VPN based on WireGuard
 cask "tailscale-app"
+# Messaging app with a focus on speed and security
 cask "telegram"
+# Charting and social-networking for investment traders
 cask "tradingview"
+# Remote pair programming app
 cask "tuple"
+# Native desktop client for WhatsApp
 cask "whatsapp"
 mas "1Password for Safari", id: 1569813296
 mas "Goodnotes", id: 1444383602
