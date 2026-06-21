@@ -107,7 +107,6 @@
 - Use Linear only when issue/project context or updates are explicitly needed
 - Use PostHog only when product analytics context is explicitly needed
 - Use incident.io only when incident/status context is explicitly needed
-- Use Railway only when deployment, service, or environment context is explicitly needed
 
 ## Scope Control
 

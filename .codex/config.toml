@@ -34,8 +34,5 @@ url = "https://mcp.posthog.com/mcp"
 [mcp_servers.incident]
 url = "https://mcp.incident.io/mcp"
 
-[mcp_servers.railway]
-url = "https://mcp.railway.com"
-
 [mcp_servers.uidotsh.tools.uidotsh_fetch]
 approval_mode = "approve"

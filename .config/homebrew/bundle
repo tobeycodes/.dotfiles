@@ -101,8 +101,6 @@ brew "pipx"
 brew "pkgconf"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
-# Develop and deploy code with zero configuration
-brew "railway"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Acoustic spectrum analyser
