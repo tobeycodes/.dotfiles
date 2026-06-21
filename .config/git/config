@@ -86,6 +86,9 @@
 [gitbutler]
   signCommits = true
 
+[but "ui"]
+	tui = true
+
 [includeIf "gitdir:~/code/squads-treasury/"]
   path = "~/.config/git/work_config"
 
