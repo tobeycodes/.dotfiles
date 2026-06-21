@@ -3,3 +3,6 @@
   email = tobey@sqds.io
   github = tobey-sqds
   signingKey = "~/.ssh/squads.pub"
+
+[url "squads-github.com:"]
+  insteadOf = git@github.com:
