@@ -3,10 +3,14 @@
     "@colbymchenry/codegraph": "^0.9.9",
     "@earendil-works/pi-coding-agent": "^0.79.1",
     "@kitlangton/ghui": "^0.7.1",
+    "agentmail-cli": "^0.7.12",
     "critique": "^0.1.140",
     "eas-cli": "^20.1.0",
     "openlogs": "^0.0.4",
     "portless": "^0.14.0",
     "skills": "^1.5.10"
-  }
+  },
+  "trustedDependencies": [
+    "agentmail-cli"
+  ]
 }
