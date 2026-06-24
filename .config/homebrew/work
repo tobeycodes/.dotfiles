@@ -4,6 +4,8 @@ tap "jnsahaj/lumen", trusted: true
 tap "nikitabobko/tap", trusted: true
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
@@ -24,6 +26,8 @@ brew "gh"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Modern load testing tool, using Go and JavaScript
+brew "k6"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Simple terminal UI for git commands
@@ -68,6 +72,8 @@ cask "1password"
 cask "nikitabobko/tap/aerospace"
 # Chromium based browser
 cask "arc"
+# Screen recording software
+cask "cap"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # OpenAI's coding agent that runs in your terminal
@@ -81,6 +87,10 @@ cask "font-jetbrains-mono-nerd-font"
 cask "ghostty"
 # Web browser
 cask "google-chrome"
+# AI-powered notepad for meetings
+cask "granola"
+# Speech to text application
+cask "handy"
 # App to manage software development and track bugs
 cask "linear"
 # Multi-platform web browser
@@ -97,6 +107,10 @@ cask "raycast"
 cask "slack"
 # Native GUI tool for relational databases
 cask "tableplus"
+# Native database client for many database types
+cask "tablepro"
+# Control your data usage on slow or expensive networks
+cask "tripmode"
 # Remote pair programming app
 cask "tuple"
 mas "Developer", id: 640199958
