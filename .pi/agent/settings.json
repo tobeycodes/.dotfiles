@@ -1,6 +1,7 @@
 {
-  "lastChangelogVersion": "0.79.1",
+  "lastChangelogVersion": "0.80.3",
   "packages": [
     "npm:@plannotator/pi-extension"
-  ]
+  ],
+  "theme": "dark"
 }
