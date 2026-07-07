@@ -48,6 +48,8 @@ brew "ripgrep"
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
 # Terminal multiplexer
 brew "tmux"
 # Parser generator tool
@@ -95,6 +97,8 @@ cask "handy"
 cask "linear"
 # Multi-platform web browser
 cask "microsoft-edge"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -109,6 +113,10 @@ cask "slack"
 cask "tableplus"
 # Native database client for many database types
 cask "tablepro"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
+# Web browser
+cask "thebrowsercompany-dia"
 # Control your data usage on slow or expensive networks
 cask "tripmode"
 # Remote pair programming app
