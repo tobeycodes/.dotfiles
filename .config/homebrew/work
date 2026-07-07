@@ -23,12 +23,16 @@ brew "gcc"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Agent multiplexer that lives in your terminal
+brew "herdr", restart_service: :changed
 # Modern load testing tool, using Go and JavaScript
 brew "k6"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Postgres C API library
+brew "libpq"
 # YAML Parser
 brew "libyaml"
 # Utility for directing compilation
@@ -39,6 +43,8 @@ brew "mas"
 brew "mise"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Command-line interface for Render
+brew "render"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Cross-shell prompt for astronauts
@@ -69,6 +75,8 @@ cask "1password"
 cask "nikitabobko/tap/aerospace"
 # Chromium based browser
 cask "arc"
+# Use your phone as a high-quality webcam with image tuning controls
+cask "camo-studio"
 # Screen recording software
 cask "cap"
 # Terminal-based AI coding assistant
@@ -120,4 +128,5 @@ mas "Developer", id: 640199958
 mas "Xcode", id: 497799835
 go "cmd/go"
 go "cmd/gofmt"
+cargo "avm"
 uv "posting"
