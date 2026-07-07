@@ -2,7 +2,6 @@
   "trustedtaps": [
     "anomalyco/tap",
     "felixkratz/formulae",
-    "jnsahaj/lumen",
     "nikitabobko/tap",
     "teamookla/speedtest",
     "txtx/taps",

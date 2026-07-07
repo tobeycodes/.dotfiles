@@ -1,6 +1,5 @@
 tap "anomalyco/tap", trusted: true
 tap "felixkratz/formulae", trusted: true
-tap "jnsahaj/lumen", trusted: true
 tap "nikitabobko/tap", trusted: true
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
@@ -66,8 +65,6 @@ brew "zoxide"
 brew "anomalyco/tap/opencode"
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
-# lumen is a command-line tool that can show pretty diff, generate commit messages with AI, summarise diffs / commits, and more without requiring an API key.
-brew "jnsahaj/lumen/lumen"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # AeroSpace is an i3-like tiling window manager for macOS

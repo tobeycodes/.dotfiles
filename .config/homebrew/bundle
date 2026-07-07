@@ -1,6 +1,5 @@
 tap "anomalyco/tap", trusted: true
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
-tap "jnsahaj/lumen", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "teamookla/speedtest", trusted: true
 tap "txtx/taps", trusted: true
@@ -141,8 +140,6 @@ brew "zsh"
 brew "anomalyco/tap/opencode"
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
-# lumen is a command-line tool that can show pretty diff, generate commit messages with AI, summarise diffs / commits, and more without requiring an API key.
-brew "jnsahaj/lumen/lumen"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 # CLI tool for managing contract deployments on any blockchain
