@@ -9,7 +9,7 @@
     "@opencode-ai/cli": "^0.0.0-next-15305",
     "agentmail-cli": "^0.7.12",
     "eas-cli": "^20.5.1",
-    "hunkdiff": "^0.17.0",
+    "hunkdiff": "^0.17.1",
     "openlogs": "^0.0.4",
     "portless": "^0.15.1",
     "skills": "^1.5.14"
