@@ -9,7 +9,7 @@
     "agentmail-cli": "^0.7.12",
     "critique": "^0.1.140",
     "eas-cli": "^20.5.1",
-    "hunkdiff": "^0.16.0",
+    "hunkdiff": "^0.17.0",
     "openlogs": "^0.0.4",
     "portless": "^0.15.1",
     "skills": "^1.5.14"
