@@ -2,7 +2,7 @@ git:
   autoFetch: false
   overrideGpg: true
   pagers:
-    - pager: delta --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+    - pager: hunk pager
 services:
   'tobey': 'github:github.com'
   'squads': 'github:github.com'

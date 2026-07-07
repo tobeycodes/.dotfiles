@@ -12,7 +12,6 @@ fd
 fish
 fzf
 git
-git-delta
 github-cli
 jujutsu
 lazydocker

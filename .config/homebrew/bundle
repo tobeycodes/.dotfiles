@@ -58,8 +58,6 @@ brew "gdbm"
 brew "gh"
 # Distributed revision control system
 brew "git"
-# Syntax-highlighting pager for git and diff output
-brew "git-delta"
 # Open-source GitLab command-line tool
 brew "glab"
 # Git-compatible distributed version control system

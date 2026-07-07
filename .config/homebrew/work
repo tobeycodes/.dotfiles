@@ -23,8 +23,6 @@ brew "gcc"
 brew "gh"
 # Distributed revision control system
 brew "git"
-# Syntax-highlighting pager for git and diff output
-brew "git-delta"
 # Modern load testing tool, using Go and JavaScript
 brew "k6"
 # Lazier way to manage everything docker

@@ -57,7 +57,6 @@ gcc-14-base
 gdb
 gh
 git
-git-delta
 gpiod
 grep
 gzip

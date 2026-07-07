@@ -6,5 +6,5 @@ email = "tobey@tobey.codes"
 
 [ui]
 default-command = "log"
-pager = "delta"
+pager = ["hunk", "pager"]
 diff-formatter = ":git"
