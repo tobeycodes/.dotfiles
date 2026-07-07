@@ -25,15 +25,6 @@
   line-numbers-plus-style       = "#449dab"
   line-numbers-zero-style       = "#3b4261"
 
-[diff]
-  tool = critique
-
-[difftool "critique"]
-  cmd = critique difftool \"$LOCAL\" \"$REMOTE\"
-
-[difftool]
-  prompt = false
-
 [fetch]
   prune = true
 
