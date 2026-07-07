@@ -5,6 +5,13 @@
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
+# Tokyo Night Storm, matching the tmux theme.
+BG=0xff1f2335
+BG_DARK=0xff1d202f
+SURFACE=0xff3b4261
+FG=0xffa9b1d6
+BLUE=0xff7aa2f7
+
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
 # These are only some of the options available. For all options see:
@@ -12,7 +19,10 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar position=top \
+                   height=40 \
+                   blur_radius=30 \
+                   color="$BG"
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -24,8 +34,8 @@ default=(
   padding_right=5
   icon.font="JetBrainsMono Nerd Font:Bold:17.0"
   label.font="JetBrainsMono Nerd Font:Bold:14.0"
-  icon.color=0xffffffff
-  label.color=0xffffffff
+  icon.color="$BLUE"
+  label.color="$FG"
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=4
@@ -40,11 +50,15 @@ sketchybar --add event aerospace_workspace_change
 sketchybar --add item aerospace_workspace left \
            --subscribe aerospace_workspace aerospace_workspace_change \
            --set aerospace_workspace \
-           icon.padding_left=7 \
-           icon.padding_right=7 \
-           background.color=0x40ffffff \
-           background.corner_radius=5 \
-           background.height=25 \
+           padding_right=2 \
+           icon.font="JetBrainsMono Nerd Font:Bold:15.0" \
+           icon.padding_left=6 \
+           icon.padding_right=6 \
+           icon.y_offset=1 \
+           icon.color="$BG_DARK" \
+           background.color="$BLUE" \
+           background.corner_radius=0 \
+           background.height=23 \
            label.drawing=off \
            script="$PLUGIN_DIR/space.sh"
 
@@ -52,10 +66,8 @@ sketchybar --add item aerospace_workspace left \
 # We add some regular items to the left side of the bar, where
 # only the properties deviating from the current defaults need to be set
 
-sketchybar --add item chevron left \
-           --set chevron icon= label.drawing=off \
-           --add item front_app left \
-           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+sketchybar --add item front_app left \
+           --set front_app padding_left=2 icon.drawing=off label.color="$FG" script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
@@ -70,13 +82,20 @@ sketchybar --add item chevron left \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
+           --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
            --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
            --subscribe volume volume_change \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
+
+sketchybar --set '/clock|volume|battery/' \
+           background.color="$SURFACE" \
+           background.corner_radius=5 \
+           background.height=25 \
+           background.padding_left=3 \
+           background.padding_right=3
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
