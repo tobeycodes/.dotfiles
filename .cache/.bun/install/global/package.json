@@ -6,7 +6,6 @@
     "@colbymchenry/codegraph": "^1.4.1",
     "@earendil-works/pi-coding-agent": "^0.80.10",
     "@kitlangton/ghui": "^0.9.0",
-    "@opencode-ai/cli": "^0.0.0-next-15305",
     "agentmail-cli": "^0.7.14",
     "eas-cli": "^21.0.2",
     "hunkdiff": "^0.17.2",
