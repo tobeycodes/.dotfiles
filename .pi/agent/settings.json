@@ -3,5 +3,5 @@
   "packages": [
     "npm:@plannotator/pi-extension"
   ],
-  "theme": "dark"
+  "theme": "tokyonight"
 }
