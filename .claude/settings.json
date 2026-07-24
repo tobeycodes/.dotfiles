@@ -21,6 +21,18 @@
         ],
         "matcher": ""
       }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bash '~/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
     ]
   },
   "theme": "dark-ansi"
