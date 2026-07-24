@@ -1,7 +1,4 @@
 {
-  "trustedDependencies": [
-    "agentmail-cli"
-  ],
   "dependencies": {
     "@colbymchenry/codegraph": "^1.4.1",
     "@earendil-works/pi-coding-agent": "^0.82.0",
@@ -12,5 +9,8 @@
     "openlogs": "^0.0.4",
     "portless": "^0.15.4",
     "skills": "^1.5.19"
-  }
+  },
+  "trustedDependencies": [
+    "agentmail-cli"
+  ]
 }

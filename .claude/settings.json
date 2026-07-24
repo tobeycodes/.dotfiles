@@ -1,27 +1,27 @@
 {
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "notify \"Claude Code\""
-          }
-        ]
-      }
-    ]
-  },
   "enabledPlugins": {
     "plannotator@plannotator": true
   },
   "extraKnownMarketplaces": {
     "plannotator": {
       "source": {
-        "source": "github",
-        "repo": "backnotprop/plannotator"
+        "repo": "backnotprop/plannotator",
+        "source": "github"
       }
     }
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "command": "notify \"Claude Code\"",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ]
   },
   "theme": "dark-ansi"
 }

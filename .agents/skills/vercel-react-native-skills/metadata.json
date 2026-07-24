@@ -1,8 +1,7 @@
 {
-  "version": "1.0.0",
-  "organization": "Engineering",
-  "date": "January 2026",
   "abstract": "Comprehensive performance optimization guide for React Native applications, designed for AI agents and LLMs. Contains 35+ rules across 13 categories, prioritized by impact from critical (core rendering, list performance) to incremental (fonts, imports). Each rule includes detailed explanations, real-world examples comparing incorrect vs. correct implementations, and specific impact metrics to guide automated refactoring and code generation.",
+  "date": "January 2026",
+  "organization": "Engineering",
   "references": [
     "https://react.dev",
     "https://reactnative.dev",
@@ -12,5 +11,6 @@
     "https://legendapp.com/open-source/legend-list",
     "https://github.com/nandorojo/galeria",
     "https://zeego.dev"
-  ]
+  ],
+  "version": "1.0.0"
 }

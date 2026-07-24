@@ -4,9 +4,9 @@
       {
         "hooks": [
           {
-            "type": "command",
             "command": "plannotator",
-            "timeout": 345600
+            "timeout": 345600,
+            "type": "command"
           }
         ]
       }
