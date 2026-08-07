@@ -128,5 +128,5 @@ mas "Developer", id: 640199958
 mas "Xcode", id: 497799835
 go "cmd/go"
 go "cmd/gofmt"
-cargo "avm"
+cargo "avm", source: "https://github.com/solana-foundation/anchor"
 uv "posting"
