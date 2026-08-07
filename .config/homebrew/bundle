@@ -1,4 +1,5 @@
 tap "anomalyco/tap", trusted: true
+tap "clojure/tools"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "teamookla/speedtest", trusted: true
@@ -60,6 +61,8 @@ brew "gh"
 brew "git"
 # Open-source GitLab command-line tool
 brew "glab"
+# Agent multiplexer that lives in your terminal
+brew "herdr", restart_service: :changed
 # Git-compatible distributed version control system
 brew "jj"
 # Handy way to save and run project-specific commands
@@ -136,6 +139,8 @@ brew "zoxide"
 brew "zsh"
 # The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode"
+# The Clojure Programming Language
+brew "clojure/tools/clojure", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
 # Ookla Speedtest
@@ -156,6 +161,8 @@ cask "android-studio"
 cask "arc"
 # Multi-track audio editor and recorder
 cask "audacity"
+# Desktop password and login vault
+cask "bitwarden"
 # Screen recording software
 cask "cap"
 # Video editing and image design platform
@@ -227,6 +234,8 @@ cask "tablepro"
 cask "tailscale-app"
 # Messaging app with a focus on speed and security
 cask "telegram"
+# Web browser
+cask "thebrowsercompany-dia"
 # Charting and social-networking for investment traders
 cask "tradingview"
 # Remote pair programming app
