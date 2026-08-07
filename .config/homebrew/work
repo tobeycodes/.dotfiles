@@ -1,6 +1,7 @@
 tap "anomalyco/tap", trusted: true
 tap "felixkratz/formulae", trusted: true
 tap "nikitabobko/tap", trusted: true
+tap "temporalio/prerelease"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Official Amazon AWS command-line interface
@@ -43,6 +44,8 @@ brew "mas"
 brew "mise"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Persistent key-value database, with built-in net interface
+brew "redis"
 # Command-line interface for Render
 brew "render"
 # Search tool like grep and The Silver Searcher
@@ -53,6 +56,8 @@ brew "starship"
 brew "stow"
 # Easiest, most secure way to use WireGuard and 2FA
 brew "tailscale"
+# Command-line interface for running and interacting with Temporal Server and UI
+brew "temporal"
 # Terminal multiplexer
 brew "tmux"
 # Parser generator tool
@@ -63,12 +68,16 @@ brew "unzip"
 brew "uv"
 # CLI for Git worktree management, designed for parallel AI agent workflows
 brew "worktrunk"
+# Tool for managing your YubiKey configuration
+brew "ykman"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode"
+brew "anomalyco/tap/opencode", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
+# Cloud plugin for the Temporal CLI (Pre-release)
+brew "temporalio/prerelease/temporal-cloud", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # AeroSpace is an i3-like tiling window manager for macOS
@@ -112,6 +121,8 @@ cask "opencode-desktop"
 cask "raycast"
 # Team communication and collaboration software
 cask "slack"
+# Music streaming service
+cask "spotify"
 # Native GUI tool for relational databases
 cask "tableplus"
 # Native database client for many database types
@@ -130,3 +141,4 @@ go "cmd/go"
 go "cmd/gofmt"
 cargo "avm", source: "https://github.com/solana-foundation/anchor"
 uv "posting"
+npm "corepack"
