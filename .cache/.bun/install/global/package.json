@@ -1,14 +1,14 @@
 {
   "dependencies": {
-    "@colbymchenry/codegraph": "^1.4.1",
-    "@earendil-works/pi-coding-agent": "^0.82.0",
+    "@colbymchenry/codegraph": "^1.5.0",
+    "@earendil-works/pi-coding-agent": "^0.84.1",
     "@kitlangton/ghui": "^0.9.0",
     "agentmail-cli": "^0.7.14",
-    "eas-cli": "^21.0.2",
-    "hunkdiff": "^0.17.2",
+    "eas-cli": "^21.7.0",
+    "hunkdiff": "^0.17.7",
     "openlogs": "^0.0.4",
-    "portless": "^0.15.4",
-    "skills": "^1.5.19"
+    "portless": "^0.15.5",
+    "skills": "^1.5.22"
   },
   "trustedDependencies": [
     "agentmail-cli"
