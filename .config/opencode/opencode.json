@@ -51,6 +51,11 @@
       "type": "remote",
       "url": "https://mcp.posthog.com/mcp"
     },
+    "resend": {
+      "enabled": false,
+      "type": "remote",
+      "url": "https://mcp.resend.com/mcp"
+    },
     "tablepro": {
       "command": [
         "/Applications/TablePro.app/Contents/MacOS/tablepro-mcp"
