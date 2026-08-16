@@ -6,6 +6,7 @@
     "agentmail-cli": "^0.7.14",
     "eas-cli": "^21.7.0",
     "hunkdiff": "^0.17.7",
+    "open-computer-use": "^0.3.1",
     "openlogs": "^0.0.4",
     "portless": "^0.15.5",
     "skills": "^1.5.22"

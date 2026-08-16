@@ -38,6 +38,14 @@
       "type": "remote",
       "url": "https://mcp.linear.app/mcp"
     },
+    "open-computer-use": {
+      "command": [
+        "open-computer-use",
+        "mcp"
+      ],
+      "enabled": false,
+      "type": "local"
+    },
     "posthog": {
       "enabled": false,
       "type": "remote",
