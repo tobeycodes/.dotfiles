@@ -1,5 +1,6 @@
 {
   "trustedformulae": [
+    "anomalyco/tap/opencode",
     "clojure/tools/clojure"
   ],
   "trustedtaps": [
