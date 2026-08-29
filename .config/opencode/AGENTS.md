@@ -177,11 +177,6 @@
 - When other agents' branches are applied, run `but pull --check` first and ask before updating if it reports conflicts or their branches would move.
 - If the user asks you to handle update conflicts, use GitButler's conflict tools. Ask before resolving semantic conflicts, dependency updates, generated files, or conflicts involving another person's work.
 
-### Open draft pull requests by default
-
-- When asked to open a pull request, create it as a draft with GitButler unless the user says it is ready for review.
-- Remember that creating a draft pull request still publishes the branch.
-
 ### Publish on a shortcut phrase
 
 - When the user says `ship it`, commit this session's changes on its dedicated GitButler branch, creating one if needed.
