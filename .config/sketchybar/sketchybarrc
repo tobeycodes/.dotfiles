@@ -1,82 +1,99 @@
-# This is a demo config to showcase some of the most important commands.
-# It is meant to be changed and configured, as it is intentionally kept sparse.
-# For a (much) more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
+#!/bin/sh
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
-##### Bar Appearance #####
-# Configuring the general appearance of the bar.
-# These are only some of the options available. For all options see:
-# https://felixkratz.github.io/SketchyBar/config/bar
-# If you are looking for other colors, see the color picker:
-# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+BG=0xff1a1b26
+FG=0xffa9b1d6
+DIM=0xff62667e
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+FONT="JetBrainsMono Nerd Font"
+ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:14.0"
+LARGE_ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:20.0"
+TEXT_FONT="$FONT:Regular:12.0"
 
-##### Changing Defaults #####
-# We now change some default values, which are applied to all further items.
-# For a full list of all available item properties see:
-# https://felixkratz.github.io/SketchyBar/config/items
+sketchybar --bar position=top \
+                   height=26 \
+                   margin=0 \
+                   blur_radius=0 \
+                   shadow=off \
+                   color="$BG" \
+                   notch_width=200 \
+                   padding_left=16 \
+                   padding_right=16
 
 default=(
-  padding_left=5
-  padding_right=5
-  icon.font="JetBrainsMono Nerd Font:Bold:17.0"
-  label.font="JetBrainsMono Nerd Font:Bold:14.0"
-  icon.color=0xffffffff
-  label.color=0xffffffff
-  icon.padding_left=4
-  icon.padding_right=4
-  label.padding_left=4
-  label.padding_right=4
+  padding_left=0
+  padding_right=0
+  icon.font="$ICON_FONT"
+  icon.color="$FG"
+  icon.padding_left=0
+  icon.padding_right=0
+  label.font="$TEXT_FONT"
+  label.color="$FG"
+  label.padding_left=0
+  label.padding_right=0
+  background.drawing=off
 )
 sketchybar --default "${default[@]}"
 
-##### Adding Aerospace Workspace Indicator #####
-
 sketchybar --add event aerospace_workspace_change
 
-sketchybar --add item aerospace_workspace left \
-           --subscribe aerospace_workspace aerospace_workspace_change \
-           --set aerospace_workspace \
-           icon.padding_left=7 \
-           icon.padding_right=7 \
-           background.color=0x40ffffff \
-           background.corner_radius=5 \
-           background.height=25 \
-           label.drawing=off \
-           script="$PLUGIN_DIR/space.sh"
+for workspace in 1 2 3 4 5 6 7 8 9; do
+  sketchybar --add item "space.$workspace" left \
+             --set "space.$workspace" width=20 \
+                                      icon="$workspace" \
+                                      icon.color="$DIM" \
+                                      icon.padding_left=0 \
+                                      icon.padding_right=0 \
+                                      label.drawing=off
+done
 
-##### Adding Left Items #####
-# We add some regular items to the left side of the bar, where
-# only the properties deviating from the current defaults need to be set
+for workspace in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
+  sketchybar --add item "space.$workspace" left \
+             --set "space.$workspace" width=20 \
+                                      drawing=off \
+                                      icon="$workspace" \
+                                      icon.color="$FG" \
+                                      icon.padding_left=0 \
+                                      icon.padding_right=0 \
+                                      label.drawing=off
+done
 
-sketchybar --add item chevron left \
-           --set chevron icon= label.drawing=off \
-           --add item front_app left \
-           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
-           --subscribe front_app front_app_switched
+sketchybar --add item workspace_observer left \
+           --subscribe workspace_observer aerospace_workspace_change \
+           --set workspace_observer width=0 \
+                                    update_freq=2 \
+                                    icon.drawing=off \
+                                    label.drawing=off \
+                                    script="$PLUGIN_DIR/space.sh"
 
-##### Adding Right Items #####
-# In the same way as the left items we can add items to the right side.
-# Additional position (e.g. center) are available, see:
-# https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
+sketchybar --add item status.battery right \
+           --set status.battery icon=󰁹 icon.font="$ICON_FONT" icon.padding_left=3 icon.padding_right=3 label.drawing=off \
+           --add item status.volume right \
+           --set status.volume icon=󰕾 icon.font="$LARGE_ICON_FONT" icon.padding_left=3 icon.padding_right=3 label.drawing=off \
+           --add item status.network right \
+           --set status.network icon=󰖩 icon.font="$LARGE_ICON_FONT" icon.padding_left=3 icon.padding_right=3 label.drawing=off \
+           --add item status.bluetooth right \
+           --set status.bluetooth icon=󰂯 icon.font="$ICON_FONT" icon.padding_left=3 icon.padding_right=3 label.drawing=off \
+           --add item status_observer right \
+           --subscribe status_observer volume_change system_woke power_source_change \
+           --set status_observer width=0 \
+                                 update_freq=10 \
+                                 icon.drawing=off \
+                                 label.drawing=off \
+                                 script="$PLUGIN_DIR/status.sh"
 
-# Some items refresh on a fixed cycle, e.g. the clock runs its script once
-# every 10s. Other items respond to events they subscribe to, e.g. the
-# volume.sh script is only executed once an actual change in system audio
-# volume is registered. More info about the event system can be found here:
-# https://felixkratz.github.io/SketchyBar/config/events
+sketchybar --add item weather q \
+           --set weather update_freq=1800 \
+                         icon.padding_right=4 \
+                         label.padding_left=0 \
+                         label.padding_right=16 \
+                         script="$PLUGIN_DIR/weather.sh" \
+           --add item clock e \
+           --set clock update_freq=10 \
+                       icon.drawing=off \
+                       label.padding_left=16 \
+                       label.padding_right=8 \
+                       script="$PLUGIN_DIR/clock.sh"
 
-sketchybar --add item clock right \
-           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
-           --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
-           --subscribe volume volume_change \
-           --add item battery right \
-           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change
-
-##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
