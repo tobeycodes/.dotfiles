@@ -25,7 +25,7 @@ brew "gh"
 # Distributed revision control system
 brew "git"
 # Agent multiplexer that lives in your terminal
-brew "herdr", restart_service: :changed
+brew "herdr"
 # Modern load testing tool, using Go and JavaScript
 brew "k6"
 # Lazier way to manage everything docker
@@ -107,6 +107,8 @@ cask "granola"
 cask "handy"
 # App to manage software development and track bugs
 cask "linear"
+# Open-source firewall to block unknown outgoing connections
+cask "lulu"
 # Multi-platform web browser
 cask "microsoft-edge"
 # Reverse proxy, secure introspectable tunnels to localhost
@@ -117,6 +119,8 @@ cask "notion"
 cask "obsidian"
 # AI coding agent desktop client
 cask "opencode-desktop"
+# Design tool for creating interfaces and prototypes
+cask "paper-design"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Team communication and collaboration software
@@ -136,6 +140,7 @@ cask "tripmode"
 # Remote pair programming app
 cask "tuple"
 mas "Developer", id: 640199958
+mas "Numbers", id: 361304891
 mas "Xcode", id: 497799835
 go "cmd/go"
 go "cmd/gofmt"
