@@ -2,9 +2,12 @@
   "defaultModel": "glm-5.3",
   "defaultProvider": "opencode-go",
   "defaultThinkingLevel": "high",
-  "lastChangelogVersion": "0.84.1",
+  "lastChangelogVersion": "0.84.4",
   "packages": [
-    "npm:@plannotator/pi-extension"
+    {
+      "skills": [],
+      "source": "npm:@plannotator/pi-extension"
+    }
   ],
   "theme": "tokyonight"
 }
