@@ -1,4 +1,7 @@
 {
+  "defaultModel": "glm-5.3",
+  "defaultProvider": "opencode-go",
+  "defaultThinkingLevel": "high",
   "lastChangelogVersion": "0.84.1",
   "packages": [
     "npm:@plannotator/pi-extension"
