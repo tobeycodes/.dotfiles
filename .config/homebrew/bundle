@@ -62,7 +62,7 @@ brew "git"
 # Open-source GitLab command-line tool
 brew "glab"
 # Agent multiplexer that lives in your terminal
-brew "herdr", restart_service: :changed
+brew "herdr"
 # Git-compatible distributed version control system
 brew "jj"
 # Handy way to save and run project-specific commands
@@ -138,7 +138,7 @@ brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
 # The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode"
+brew "anomalyco/tap/opencode", trusted: true
 # The Clojure Programming Language
 brew "clojure/tools/clojure", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
@@ -161,8 +161,6 @@ cask "android-studio"
 cask "arc"
 # Multi-track audio editor and recorder
 cask "audacity"
-# Desktop password and login vault
-cask "bitwarden"
 # Screen recording software
 cask "cap"
 # Video editing and image design platform
@@ -252,7 +250,8 @@ mas "PDFgear", id: 6469021132
 mas "Xcode", id: 497799835
 go "cmd/go"
 go "cmd/gofmt"
-cargo "avm"
+cargo "avm", source: "https://github.com/coral-xyz/anchor"
 cargo "lazyjj"
 cargo "tree-sitter-cli"
 uv "posting"
+npm "corepack"
