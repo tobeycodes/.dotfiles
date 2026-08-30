@@ -11,19 +11,19 @@ TEMPERATURE=${WEATHER#*|}
 CONDITION=$(printf '%s' "$CONDITION" | tr '[:upper:]' '[:lower:]')
 
 case "$CONDITION" in
-  *thunder*) ICON=󰙾
+  *thunder*) ICON=󰙾 ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:23.9"
   ;;
-  *snow*|*sleet*|*blizzard*) ICON=󰼶
+  *snow*|*sleet*|*blizzard*) ICON=󰼶 ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:21.59"
   ;;
-  *rain*|*drizzle*|*shower*) ICON=󰖗
+  *rain*|*drizzle*|*shower*) ICON=󰖗 ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:23.9"
   ;;
-  *fog*|*mist*) ICON=󰖑
+  *fog*|*mist*) ICON=󰖑 ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:26.53"
   ;;
-  *sunny*|*clear*) ICON=󰖙
+  *sunny*|*clear*) ICON=󰖙 ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:18.79"
   ;;
-  *partly*) ICON=󰖕
+  *partly*) ICON=󰖕 ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:22.49"
   ;;
-  *) ICON=󰖐
+  *) ICON=󰖐 ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:34.21"
 esac
 
-sketchybar --set "$NAME" icon="$ICON" label="$TEMPERATURE"
+sketchybar --set "$NAME" icon="$ICON" icon.font="$ICON_FONT" label="$TEMPERATURE"

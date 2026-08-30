@@ -8,7 +8,6 @@ DIM=0xff62667e
 
 FONT="JetBrainsMono Nerd Font"
 ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:14.0"
-LARGE_ICON_FONT="JetBrainsMono Nerd Font Mono:Regular:20.0"
 TEXT_FONT="$FONT:Regular:12.0"
 
 sketchybar --bar position=top \
@@ -41,6 +40,7 @@ sketchybar --add event aerospace_workspace_change
 for workspace in 1 2 3 4 5 6 7 8 9; do
   sketchybar --add item "space.$workspace" left \
              --set "space.$workspace" width=20 \
+                                      align=center \
                                       icon="$workspace" \
                                       icon.color="$DIM" \
                                       icon.padding_left=0 \
@@ -51,6 +51,7 @@ done
 for workspace in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
   sketchybar --add item "space.$workspace" left \
              --set "space.$workspace" width=20 \
+                                      align=center \
                                       drawing=off \
                                       icon="$workspace" \
                                       icon.color="$FG" \
@@ -68,13 +69,13 @@ sketchybar --add item workspace_observer left \
                                     script="$PLUGIN_DIR/space.sh"
 
 sketchybar --add item status.battery right \
-           --set status.battery icon=󰁹 icon.font="$ICON_FONT" icon.padding_left=3 icon.padding_right=3 label.drawing=off \
+           --set status.battery icon=󰁹 icon.font="JetBrainsMono Nerd Font Mono:Regular:14.01" width=24 align=center icon.padding_left=4 icon.padding_right=2 label.drawing=off \
            --add item status.volume right \
-           --set status.volume icon=󰕾 icon.font="$LARGE_ICON_FONT" icon.padding_left=3 icon.padding_right=3 label.drawing=off \
-           --add item status.network right \
-           --set status.network icon=󰖩 icon.font="$LARGE_ICON_FONT" icon.padding_left=3 icon.padding_right=3 label.drawing=off \
-           --add item status.bluetooth right \
-           --set status.bluetooth icon=󰂯 icon.font="$ICON_FONT" icon.padding_left=3 icon.padding_right=3 label.drawing=off \
+            --set status.volume icon=󰕾 icon.font="JetBrainsMono Nerd Font Mono:Regular:22.26" width=24 align=center icon.padding_left=3 icon.padding_right=3 label.drawing=off \
+            --add item status.network right \
+            --set status.network icon=󰖩 icon.font="JetBrainsMono Nerd Font Mono:Regular:25.9" width=24 align=center icon.padding_left=4 icon.padding_right=2 label.drawing=off \
+            --add item status.bluetooth right \
+            --set status.bluetooth icon=󰂯 icon.font="JetBrainsMono Nerd Font Mono:Regular:14.01" width=24 align=center icon.padding_left=4 icon.padding_right=2 label.drawing=off \
            --add item status_observer right \
            --subscribe status_observer volume_change system_woke power_source_change \
            --set status_observer width=0 \
