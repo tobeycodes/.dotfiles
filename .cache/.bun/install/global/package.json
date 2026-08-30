@@ -5,8 +5,8 @@
     "@kitlangton/ghui": "^0.9.0",
     "agentmail-cli": "^1.1.1",
     "eas-cli": "^23.0.0",
-    "hunkdiff": "^0.20.0",
-    "open-computer-use": "^0.3.1",
+    "hunkdiff": "^0.20.1",
+    "open-computer-use": "^0.3.2",
     "openlogs": "^0.0.4",
     "portless": "^0.15.6",
     "skills": "^1.5.23"
