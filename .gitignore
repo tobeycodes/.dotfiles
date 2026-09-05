@@ -2,7 +2,7 @@
 fish_variables
 node_modules
 secrets.fish
-
+.config/opencode/service.json
 .agents/skills/add-dark-mode/
 .agents/skills/brand-kit/
 .agents/skills/canonicalize-tailwind/
