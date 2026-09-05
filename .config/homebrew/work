@@ -10,6 +10,8 @@ brew "awscli"
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Platform keystore credential helper for Docker
+brew "docker-credential-helper"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # User-friendly command-line shell for UNIX-like operating systems
