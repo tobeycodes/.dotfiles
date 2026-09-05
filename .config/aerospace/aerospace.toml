@@ -299,3 +299,7 @@ run = "move-node-to-workspace N"
 [[on-window-detected]]
 if.app-id = "com.linear"
 run = "move-node-to-workspace P"
+
+[[on-window-detected]]
+if.app-id = "com.todesktop.2601167vjw8xe"
+run = "move-node-to-workspace C"
