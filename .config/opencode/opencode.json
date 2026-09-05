@@ -70,6 +70,17 @@
       },
       "type": "remote",
       "url": "https://ui.sh/mcp?agent=opencode"
+    },
+    "agentation": {
+      "type": "local",
+      "command": ["npx", "-y", "agentation-mcp", "server"]
+    },
+    "agentmail": {
+      "type": "remote",
+      "url": "https://mcp.agentmail.to/mcp",
+      "headers": {
+        "x-api-key": "${AGENTMAIL_API_KEY}"
+      }
     }
   },
   "plugin": [
