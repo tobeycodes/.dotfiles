@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "format": "oxfmt"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.67.0"
+  }
+}

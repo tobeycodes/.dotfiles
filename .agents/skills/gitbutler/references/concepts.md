@@ -129,6 +129,7 @@ Use when:
 Example: User profile page needs authentication to be implemented first.
 
 **Stacking two existing branches:** If both branches already exist and you need to make one depend on the other, use top-level `move`:
+
 ```bash
 but move feature/frontend --above feature/backend
 # Now frontend is stacked on top of backend — both in the same stack
@@ -144,22 +145,22 @@ but move feature/frontend --unstack
 
 ## The Editing Model
 
-History editing is expressed as *sources* and a *target*. Sources are positional CLI IDs; the target
+History editing is expressed as _sources_ and a _target_. Sources are positional CLI IDs; the target
 is a flag. `zz` is a special ID meaning "the uncommitted area".
 
 `but squash` carries most of the model — what it does depends on the kinds you combine:
 
-| Sources          | Target (`-t`) | Operation                         | Example                       |
-| ---------------- | ------------- | --------------------------------- | ----------------------------- |
-| Commit(s)        | Commit        | Squash commits together           | `but squash mm -t nn -m "…"`  |
+| Sources          | Target (`-t`) | Operation                         | Example                                 |
+| ---------------- | ------------- | --------------------------------- | --------------------------------------- |
+| Commit(s)        | Commit        | Squash commits together           | `but squash mm -t nn -m "…"`            |
 | Branch           | Commit        | Squash a branch into a commit     | `but squash <branch-name> -t nn -m "…"` |
 | Commit(s)        | Branch        | Squash into the branch's newest   | `but squash mm -t <branch-name> -m "…"` |
-| Branch           | *(none)*      | Squash the branch into one commit | `but squash <branch-name> -m "…"`       |
-| Uncommitted file | Commit        | Amend the change into a commit    | `but squash a1 -t nn`         |
-| `zz`             | Commit        | Amend everything into a commit    | `but squash zz -t nn`         |
-| Commit           | `zz`          | Uncommit the commit               | `but squash mm -t zz`         |
-| Branch           | `zz`          | Uncommit and remove the branch    | `but squash <branch-name> -t zz`         |
-| Committed file   | Commit        | Move the file to another commit   | `but squash nn:a -t mm`       |
+| Branch           | _(none)_      | Squash the branch into one commit | `but squash <branch-name> -m "…"`       |
+| Uncommitted file | Commit        | Amend the change into a commit    | `but squash a1 -t nn`                   |
+| `zz`             | Commit        | Amend everything into a commit    | `but squash zz -t nn`                   |
+| Commit           | `zz`          | Uncommit the commit               | `but squash mm -t zz`                   |
+| Branch           | `zz`          | Uncommit and remove the branch    | `but squash <branch-name> -t zz`        |
+| Committed file   | Commit        | Move the file to another commit   | `but squash nn:a -t mm`                 |
 
 **Message flags:** commits or branches compose a NEW message unless the target is `zz`, so without
 `-m` they open an editor and block — always pass one. The remaining rows reuse the target's message

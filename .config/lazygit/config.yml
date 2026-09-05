@@ -4,8 +4,8 @@ git:
   diffRenderers:
     - command: hunk pager
 services:
-  'tobey': 'github:github.com'
-  'squads': 'github:github.com'
+  "tobey": "github:github.com"
+  "squads": "github:github.com"
 gui:
   nerdFontsVersion: "3"
   theme:

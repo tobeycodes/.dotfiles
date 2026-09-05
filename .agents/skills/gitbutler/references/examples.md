@@ -459,7 +459,6 @@ those stay stable across the edits. Run them one at a time when a ref is sha-bas
 or `#N`-suffixed, or when the next command needs freshly issued IDs, and add
 `--status-after` to get them.
 
-
 ### Auto-completion
 
 ```bash

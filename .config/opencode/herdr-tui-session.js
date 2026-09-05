@@ -17,8 +17,7 @@ function requestOnce(sessionID) {
     return Promise.resolve();
   }
 
-  const socketEndpoint =
-    process.platform === "win32" ? `\\\\.\\pipe\\${socketPath}` : socketPath;
+  const socketEndpoint = process.platform === "win32" ? `\\\\.\\pipe\\${socketPath}` : socketPath;
   const request = {
     id: `${SOURCE}:tui:${Date.now()}:${Math.floor(Math.random() * 1_000_000)
       .toString()
@@ -69,9 +68,7 @@ export default {
       const route = api.route.current;
       const sessionID = route?.name === "session" ? route.params?.sessionID : undefined;
       const session =
-        typeof sessionID === "string" && sessionID
-          ? api.state.session.get(sessionID)
-          : undefined;
+        typeof sessionID === "string" && sessionID ? api.state.session.get(sessionID) : undefined;
       if (!session || session.parentID) {
         selectedSessionID = undefined;
         retryIndex = 0;

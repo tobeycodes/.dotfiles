@@ -12,28 +12,28 @@ Include this `:root` block so the plan works when opened directly in a browser. 
   --foreground: oklch(0.18 0.02 260);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0.02 260);
-  --primary: oklch(0.50 0.25 280);
+  --primary: oklch(0.5 0.25 280);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.50 0.18 180);
+  --secondary: oklch(0.5 0.18 180);
   --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.92 0.01 260);
-  --muted-foreground: oklch(0.40 0.02 260);
-  --accent: oklch(0.60 0.22 50);
+  --muted-foreground: oklch(0.4 0.02 260);
+  --accent: oklch(0.6 0.22 50);
   --accent-foreground: oklch(0.18 0.02 260);
-  --destructive: oklch(0.50 0.25 25);
+  --destructive: oklch(0.5 0.25 25);
   --destructive-foreground: oklch(1 0 0);
-  --success: oklch(0.45 0.20 150);
+  --success: oklch(0.45 0.2 150);
   --success-foreground: oklch(1 0 0);
   --warning: oklch(0.55 0.18 85);
   --warning-foreground: oklch(0.18 0.02 260);
   --border: oklch(0.88 0.01 260);
   --input: oklch(0.92 0.01 260);
-  --ring: oklch(0.50 0.25 280);
+  --ring: oklch(0.5 0.25 280);
   --code-bg: oklch(0.92 0.01 260);
 
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
-  --font-display: ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  --font-display: ui-serif, Georgia, "Times New Roman", serif;
   --radius: 0.625rem;
 }
 ```
@@ -42,29 +42,35 @@ Include this `:root` block so the plan works when opened directly in a browser. 
 
 ## Token usage map
 
-| Role | Token | SVG equivalent |
-|------|-------|----------------|
-| Page background | `--background` | — |
-| Primary text | `--foreground` | `fill` on text |
-| Card / panel background | `--card` | `fill` on rects |
-| Subdued text, labels, captions | `--muted-foreground` | `fill` on labels |
-| Soft backgrounds, secondary fills | `--muted` | `fill` on secondary rects |
-| Primary accent (CTA, attention, keywords) | `--primary` | `stroke` / `fill` on highlighted elements |
-| Warm accent | `--accent` | — |
-| Positive / success | `--success` | `stroke` / `fill` on success paths |
-| Caution | `--warning` | `fill` on warning badges |
-| Error / destructive | `--destructive` | `stroke` / `fill` on error paths |
-| Borders, dividers | `--border` | `stroke` on box outlines |
-| Arrow strokes, diagram lines | `--muted-foreground` | `stroke` on connectors |
-| Code block background | `--code-bg` | — |
-| Body font | `--font-sans` | `font-family` on SVG body text |
-| Code / labels font | `--font-mono` | `font-family` on SVG labels |
-| Display / heading font | `--font-display` | `font-family` on SVG titles |
+| Role                                      | Token                | SVG equivalent                            |
+| ----------------------------------------- | -------------------- | ----------------------------------------- |
+| Page background                           | `--background`       | —                                         |
+| Primary text                              | `--foreground`       | `fill` on text                            |
+| Card / panel background                   | `--card`             | `fill` on rects                           |
+| Subdued text, labels, captions            | `--muted-foreground` | `fill` on labels                          |
+| Soft backgrounds, secondary fills         | `--muted`            | `fill` on secondary rects                 |
+| Primary accent (CTA, attention, keywords) | `--primary`          | `stroke` / `fill` on highlighted elements |
+| Warm accent                               | `--accent`           | —                                         |
+| Positive / success                        | `--success`          | `stroke` / `fill` on success paths        |
+| Caution                                   | `--warning`          | `fill` on warning badges                  |
+| Error / destructive                       | `--destructive`      | `stroke` / `fill` on error paths          |
+| Borders, dividers                         | `--border`           | `stroke` on box outlines                  |
+| Arrow strokes, diagram lines              | `--muted-foreground` | `stroke` on connectors                    |
+| Code block background                     | `--code-bg`          | —                                         |
+| Body font                                 | `--font-sans`        | `font-family` on SVG body text            |
+| Code / labels font                        | `--font-mono`        | `font-family` on SVG labels               |
+| Display / heading font                    | `--font-display`     | `font-family` on SVG titles               |
 
 ## Base styles
 
 ```css
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: var(--font-sans);
@@ -85,6 +91,7 @@ body {
 ## Typography
 
 **Headings** — `var(--font-display)`, weight 500, `var(--foreground)`.
+
 - H1: `2rem` page title
 - H2: `1.4rem` section headers
 - H3: `1.15rem` subsection headers
@@ -214,7 +221,9 @@ header h1 {
 ```
 
 ```css
-section { margin-top: 64px; }
+section {
+  margin-top: 64px;
+}
 
 .section-header {
   display: flex;
@@ -278,11 +287,22 @@ section { margin-top: 64px; }
 }
 
 /* Syntax tokens — these use semantic roles, not fixed colors */
-.code-panel .kw  { color: var(--primary); }         /* keywords */
-.code-panel .fn  { color: var(--accent); }           /* identifiers, types */
-.code-panel .str { color: var(--success); }          /* strings */
-.code-panel .cm  { color: var(--muted-foreground); font-style: italic; } /* comments */
-.code-panel .num { color: var(--warning); }          /* numbers */
+.code-panel .kw {
+  color: var(--primary);
+} /* keywords */
+.code-panel .fn {
+  color: var(--accent);
+} /* identifiers, types */
+.code-panel .str {
+  color: var(--success);
+} /* strings */
+.code-panel .cm {
+  color: var(--muted-foreground);
+  font-style: italic;
+} /* comments */
+.code-panel .num {
+  color: var(--warning);
+} /* numbers */
 ```
 
 ### Risk table
@@ -314,9 +334,16 @@ section { margin-top: 64px; }
   border-bottom: 1px solid var(--border);
 }
 
-.risk-row:last-child { border-bottom: none; }
-.risk-name { font-weight: 500; }
-.risk-mitigation { font-size: 0.9rem; color: var(--muted-foreground); }
+.risk-row:last-child {
+  border-bottom: none;
+}
+.risk-name {
+  font-weight: 500;
+}
+.risk-mitigation {
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+}
 
 .badge {
   font-family: var(--font-mono);
@@ -394,7 +421,12 @@ section { margin-top: 64px; }
 ```
 
 ```css
-.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
 
 .tag {
   font-family: var(--font-mono);
@@ -453,7 +485,9 @@ Wraps SVG diagrams in a bordered container:
 }
 
 @media (max-width: 720px) {
-  .two-col { grid-template-columns: 1fr; }
+  .two-col {
+    grid-template-columns: 1fr;
+  }
 }
 ```
 
@@ -482,15 +516,19 @@ summary {
 }
 
 summary::before {
-  content: '▸';
+  content: "▸";
   display: inline-block;
   margin-right: 8px;
   transition: transform 0.2s;
 }
 
-details[open] summary::before { transform: rotate(90deg); }
+details[open] summary::before {
+  transform: rotate(90deg);
+}
 
-.details-body { padding: 0 24px 24px; }
+.details-body {
+  padding: 0 24px 24px;
+}
 ```
 
 ### Milestone timeline
@@ -512,7 +550,11 @@ Vertical timeline showing phases without time estimates.
 ```
 
 ```css
-.milestones { display: flex; flex-direction: column; gap: 0; }
+.milestones {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
 
 .milestone {
   display: grid;
@@ -528,21 +570,39 @@ Vertical timeline showing phases without time estimates.
   padding-top: 4px;
 }
 
-.milestone .dot-col { display: flex; flex-direction: column; align-items: center; }
+.milestone .dot-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .milestone .dot {
-  width: 14px; height: 14px; border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
   background: var(--card);
   border: 3px solid var(--primary);
   flex-shrink: 0;
 }
 
-.milestone .dot.done { background: var(--success); border-color: var(--success); }
+.milestone .dot.done {
+  background: var(--success);
+  border-color: var(--success);
+}
 
-.milestone .line { width: 2px; flex: 1; background: var(--border); margin: 4px 0; }
-.milestone:last-child .line { display: none; }
+.milestone .line {
+  width: 2px;
+  flex: 1;
+  background: var(--border);
+  margin: 4px 0;
+}
+.milestone:last-child .line {
+  display: none;
+}
 
-.milestone .body { padding-bottom: 36px; }
+.milestone .body {
+  padding-bottom: 36px;
+}
 
 .milestone .body h3 {
   font-family: var(--font-display);

@@ -47,9 +47,7 @@ const SESSION_STATE_BY_STATUS = new Map([
 
 function stateFromSessionStatus(status) {
   const kind = typeof status === "string" ? status : status?.type;
-  return typeof kind === "string"
-    ? SESSION_STATE_BY_STATUS.get(kind.toLowerCase())
-    : undefined;
+  return typeof kind === "string" ? SESSION_STATE_BY_STATUS.get(kind.toLowerCase()) : undefined;
 }
 
 function request(method, params) {
@@ -66,8 +64,7 @@ function requestOnce(method, params) {
     return Promise.resolve();
   }
 
-  const socketEndpoint =
-    process.platform === "win32" ? `\\\\.\\pipe\\${socketPath}` : socketPath;
+  const socketEndpoint = process.platform === "win32" ? `\\\\.\\pipe\\${socketPath}` : socketPath;
 
   const requestId = `${SOURCE}:${Date.now()}:${Math.floor(Math.random() * 1_000_000)
     .toString()

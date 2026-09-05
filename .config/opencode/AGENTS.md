@@ -136,6 +136,7 @@
 - **glab CLI available** for GitLab operations (PRs, issues, etc.)
 
 <!-- gitbutler-agent-setup:start -->
+
 ## Version control
 
 - Use GitButler (`but`) for version-control inspection and write operations, including status, diffs, branching, committing, pushing, and history edits.
@@ -191,4 +192,5 @@
 ### Commit message convention
 
 - Follow the `type(scope): summary` commit-message convention when writing commit messages.
+
 <!-- gitbutler-agent-setup:end -->

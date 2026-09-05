@@ -5,11 +5,7 @@
   "lsp": true,
   "mcp": {
     "codegraph": {
-      "command": [
-        "codegraph",
-        "serve",
-        "--mcp"
-      ],
+      "command": ["codegraph", "serve", "--mcp"],
       "enabled": true,
       "type": "local"
     },
@@ -39,10 +35,7 @@
       "url": "https://mcp.linear.app/mcp"
     },
     "open-computer-use": {
-      "command": [
-        "open-computer-use",
-        "mcp"
-      ],
+      "command": ["open-computer-use", "mcp"],
       "enabled": false,
       "type": "local"
     },
@@ -57,9 +50,7 @@
       "url": "https://mcp.resend.com/mcp"
     },
     "tablepro": {
-      "command": [
-        "/Applications/TablePro.app/Contents/MacOS/tablepro-mcp"
-      ],
+      "command": ["/Applications/TablePro.app/Contents/MacOS/tablepro-mcp"],
       "enabled": false,
       "type": "local"
     },
@@ -83,9 +74,7 @@
       }
     }
   },
-  "plugin": [
-    "@plannotator/opencode@latest"
-  ],
+  "plugin": ["@plannotator/opencode@latest"],
   "provider": {
     "ollama": {
       "models": {

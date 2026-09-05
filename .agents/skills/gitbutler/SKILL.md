@@ -191,17 +191,17 @@ A wrong resolution is reverted with `but undo`.
 
 ## Git-to-But Map
 
-| git | but |
-|---|---|
-| `git status` | `but status` for branch/stack/commit overview; `but status -fv` for file/hunk details; `but diff` for selected dirty changes |
-| `git add` + `git commit` | `but commit -b <branch> -m ... <ids>` |
-| `git checkout -b` + commit | `but commit -b <new-branch> -m ... <ids>` |
-| `git push` | `but push <branch-name>` |
-| `git rebase -i` | `but move`, `but squash`, `but reword` |
-| `git rebase --onto` | `but move <branch> --above <new-base>` |
-| `git checkout -- <file>` / `git restore` | `but discard <id>` |
-| `git cherry-pick` | `but pick` |
-| `gh pr create` | `but pr new <branch-name> -m "Title..."` |
+| git                                      | but                                                                                                                          |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `git status`                             | `but status` for branch/stack/commit overview; `but status -fv` for file/hunk details; `but diff` for selected dirty changes |
+| `git add` + `git commit`                 | `but commit -b <branch> -m ... <ids>`                                                                                        |
+| `git checkout -b` + commit               | `but commit -b <new-branch> -m ... <ids>`                                                                                    |
+| `git push`                               | `but push <branch-name>`                                                                                                     |
+| `git rebase -i`                          | `but move`, `but squash`, `but reword`                                                                                       |
+| `git rebase --onto`                      | `but move <branch> --above <new-base>`                                                                                       |
+| `git checkout -- <file>` / `git restore` | `but discard <id>`                                                                                                           |
+| `git cherry-pick`                        | `but pick`                                                                                                                   |
+| `gh pr create`                           | `but pr new <branch-name> -m "Title..."`                                                                                     |
 
 ## Notes
 
