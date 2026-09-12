@@ -70,7 +70,7 @@
       "type": "remote",
       "url": "https://mcp.agentmail.to/mcp",
       "headers": {
-        "x-api-key": "${AGENTMAIL_API_KEY}"
+        "x-api-key": "{env:AGENTMAIL_API_KEY}"
       }
     }
   },
