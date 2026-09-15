@@ -4,5 +4,8 @@
   github = tobey-sqds
   signingKey = "~/.ssh/squads.pub"
 
+[gpg "ssh"]
+  program = /usr/bin/ssh-keygen
+
 [url "squads-github.com:"]
   insteadOf = git@github.com:
