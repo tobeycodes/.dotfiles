@@ -93,6 +93,18 @@
     }
   },
   "plugin": ["@plannotator/opencode@latest"],
+  "permissions": [
+    {
+      "action": "external_directory",
+      "resource": "~/.agents/skills/*",
+      "effect": "allow"
+    },
+    {
+      "action": "read",
+      "resource": "~/.agents/skills/*",
+      "effect": "allow"
+    }
+  ],
   "provider": {
     "ollama": {
       "models": {
