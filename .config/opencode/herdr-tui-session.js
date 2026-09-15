@@ -2,8 +2,10 @@
 // managed by herdr; reinstalling or updating the integration overwrites this file.
 // HERDR_INTEGRATION_ID=opencode-tui
 // HERDR_INTEGRATION_VERSION=11
+// Locally ported to the OpenCode V2 CLI plugin API.
 
 import net from "node:net";
+import { Plugin } from "@opencode/plugin/tui";
 
 const SOURCE = "herdr:opencode";
 const AGENT = "opencode";
@@ -49,9 +51,9 @@ function requestOnce(sessionID) {
   });
 }
 
-export default {
+export default Plugin.define({
   id: "herdr.opencode.session-selection",
-  tui: async (api) => {
+  setup: async (context) => {
     if (
       process.env.HERDR_ENV !== "1" ||
       !process.env.HERDR_SOCKET_PATH ||
@@ -65,11 +67,11 @@ export default {
     let nextReportAt = 0;
     let reportPending = false;
     const syncSelectedSession = async () => {
-      const route = api.route.current;
-      const sessionID = route?.name === "session" ? route.params?.sessionID : undefined;
+      const route = context.ui.router.current();
+      const sessionID = route?.type === "session" ? route.sessionID : undefined;
       const session =
-        typeof sessionID === "string" && sessionID ? api.state.session.get(sessionID) : undefined;
-      if (!session || session.parentID) {
+        typeof sessionID === "string" && sessionID ? context.data.session.get(sessionID) : undefined;
+      if (!session || context.data.session.root(sessionID) !== sessionID) {
         selectedSessionID = undefined;
         retryIndex = 0;
         nextReportAt = 0;
@@ -105,6 +107,6 @@ export default {
 
     await syncSelectedSession();
     const routePoll = setInterval(() => void syncSelectedSession(), ROUTE_POLL_INTERVAL_MS);
-    api.lifecycle.onDispose(() => clearInterval(routePoll));
+    return () => clearInterval(routePoll);
   },
-};
+});

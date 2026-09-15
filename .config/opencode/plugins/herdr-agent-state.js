@@ -3,8 +3,10 @@
 // add custom hooks/plugins beside this file instead of editing it.
 // HERDR_INTEGRATION_ID=opencode
 // HERDR_INTEGRATION_VERSION=11
+// Locally ported to the OpenCode V2 server plugin API.
 
 import net from "node:net";
+import { Plugin } from "@opencode/plugin";
 
 const SOURCE = "herdr:opencode";
 const AGENT = "opencode";
@@ -17,10 +19,10 @@ let reportedRootSessionID;
 const childSessions = new Map();
 const CHILD_EVENT_STATES = new Map([
   ["permission.asked", "blocked"],
-  ["question.asked", "blocked"],
+  ["form.created", "blocked"],
   ["permission.replied", "working"],
-  ["question.replied", "working"],
-  ["question.rejected", "working"],
+  ["form.replied", "working"],
+  ["form.cancelled", "working"],
 ]);
 
 function nextReportSeq() {
@@ -28,26 +30,10 @@ function nextReportSeq() {
   return reportSeq;
 }
 
-function sessionIDFromProperties(properties) {
-  return typeof properties?.sessionID === "string" && properties.sessionID
-    ? properties.sessionID
+function sessionIDFromData(data) {
+  return typeof data?.sessionID === "string" && data.sessionID
+    ? data.sessionID
     : undefined;
-}
-
-const SESSION_STATE_BY_STATUS = new Map([
-  ["idle", "idle"],
-  ["active", "working"],
-  ["busy", "working"],
-  ["pending", "working"],
-  ["retry", "working"],
-  ["running", "working"],
-  ["streaming", "working"],
-  ["working", "working"],
-]);
-
-function stateFromSessionStatus(status) {
-  const kind = typeof status === "string" ? status : status?.type;
-  return typeof kind === "string" ? SESSION_STATE_BY_STATUS.get(kind.toLowerCase()) : undefined;
 }
 
 function request(method, params) {
@@ -115,32 +101,50 @@ function reportState(state, sessionID) {
   return request("pane.report_agent", params);
 }
 
-export const HerdrAgentStatePlugin = async () => {
-  if (
-    process.env.HERDR_ENV !== "1" ||
-    !process.env.HERDR_SOCKET_PATH ||
-    !process.env.HERDR_PANE_ID
-  ) {
-    return {};
-  }
+export default Plugin.define({
+  id: "herdr.opencode.agent-state",
+  async setup(ctx) {
+    if (
+      process.env.HERDR_ENV !== "1" ||
+      !process.env.HERDR_SOCKET_PATH ||
+      !process.env.HERDR_PANE_ID
+    ) {
+      return;
+    }
 
-  return {
-    "chat.message": async ({ sessionID }) => {
-      if (sessionID && childSessions.has(sessionID)) {
+    await ctx.session.hook("prompt", async ({ sessionID }) => {
+      const session = await ctx.session.get({ sessionID });
+      if (session.parentID) {
+        childSessions.set(sessionID, session.parentID);
         return;
       }
       await reportState("working", sessionID);
-    },
-    event: async ({ event }) => {
-      const type = event?.type;
-      const properties = event?.properties ?? {};
-      const sessionID = sessionIDFromProperties(properties);
+    });
 
-      const info = properties.info;
-      if (info?.id && info.parentID) {
-        childSessions.set(info.id, info.parentID);
+    const handleEvent = async (event) => {
+      // V2 subscriptions receive events from every server location.
+      if (
+        event.location &&
+        (event.location.directory !== ctx.location.directory ||
+          event.location.workspaceID !== ctx.location.workspaceID)
+      ) {
+        return;
       }
-      if (sessionID && childSessions.has(sessionID)) {
+      const type = event.type;
+      const data = type === "form.created" ? event.data.form : event.data;
+      const sessionID = sessionIDFromData(data);
+      if (!sessionID || !sessionID.startsWith("ses")) {
+        return;
+      }
+
+      if (type === "session.created" && data.parentID) {
+        childSessions.set(sessionID, data.parentID);
+      }
+      if (type === "session.deleted") {
+        childSessions.delete(sessionID);
+        return;
+      }
+      if (childSessions.has(sessionID)) {
         const state = CHILD_EVENT_STATES.get(type);
         if (state) {
           let rootSessionID = sessionID;
@@ -158,41 +162,54 @@ export const HerdrAgentStatePlugin = async () => {
           // TUI plugin separately reports the root selected in this pane.
           reportedRootSessionID = sessionID;
           break;
-        case "session.updated":
-          if (sessionID && sessionID !== reportedRootSessionID) {
+        case "session.viewed":
+          if (sessionID !== reportedRootSessionID) {
             await reportSession(sessionID);
           }
           break;
-        case "session.status": {
-          const state = stateFromSessionStatus(properties.status);
-          if (state) {
-            await reportState(state, sessionID);
-          } else {
-            await reportSession(sessionID);
-          }
-          break;
-        }
-        case "tool.execute.before":
-        case "tool.execute.after":
+        case "session.execution.started":
+        case "session.retry.scheduled":
+        case "session.tool.called":
+        case "session.tool.success":
+        case "session.tool.failed":
         case "permission.replied":
-        case "question.replied":
-        case "question.rejected":
-        case "session.compacted":
+        case "form.replied":
+        case "form.cancelled":
+        case "session.compaction.started":
+        case "session.compaction.ended":
           await reportState("working", sessionID);
           break;
         case "permission.asked":
-        case "question.asked":
-        case "session.error":
+        case "form.created":
+        case "session.execution.failed":
           await reportState("blocked", sessionID);
           break;
-        case "session.idle":
+        case "session.execution.succeeded":
+        case "session.execution.interrupted":
           await reportState("idle", sessionID);
-          break;
-        case "session.deleted":
           break;
         default:
           break;
       }
-    },
-  };
-};
+    };
+
+    const controller = new AbortController();
+    const subscription = (async () => {
+      for await (const event of ctx.event.subscribe({ signal: controller.signal })) {
+        await handleEvent(event);
+      }
+    })().catch((error) => {
+      if (!controller.signal.aborted) {
+        console.error(
+          "Herdr agent-state subscription stopped; reload the plugin to resume reporting.",
+          error,
+        );
+      }
+    });
+
+    return async () => {
+      controller.abort();
+      await subscription;
+    };
+  },
+});
