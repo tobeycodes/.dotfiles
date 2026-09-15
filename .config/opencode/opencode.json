@@ -4,6 +4,11 @@
   "autoupdate": false,
   "lsp": true,
   "mcp": {
+    "cloudflare:": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.cloudflare.com/mcp"
+    },
     "codegraph": {
       "command": ["codegraph", "serve", "--mcp"],
       "enabled": true,
