@@ -77,6 +77,19 @@
       "headers": {
         "x-api-key": "{env:AGENTMAIL_API_KEY}"
       }
+    },
+    "servers": {
+      "temporal": {
+        "type": "local",
+        "command": [
+          "/opt/homebrew/bin/uvx",
+          "temporal-mcp-server",
+          "--host",
+          "localhost:7233",
+          "--namespace",
+          "default"
+        ]
+      }
     }
   },
   "plugin": ["@plannotator/opencode@latest"],
