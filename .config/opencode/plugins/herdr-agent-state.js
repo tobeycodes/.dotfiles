@@ -31,9 +31,23 @@ function nextReportSeq() {
 }
 
 function sessionIDFromData(data) {
-  return typeof data?.sessionID === "string" && data.sessionID
-    ? data.sessionID
-    : undefined;
+  return typeof data?.sessionID === "string" && data.sessionID ? data.sessionID : undefined;
+}
+
+const SESSION_STATE_BY_STATUS = new Map([
+  ["idle", "idle"],
+  ["active", "working"],
+  ["busy", "working"],
+  ["pending", "working"],
+  ["retry", "working"],
+  ["running", "working"],
+  ["streaming", "working"],
+  ["working", "working"],
+]);
+
+function stateFromSessionStatus(status) {
+  const kind = typeof status === "string" ? status : status?.type;
+  return typeof kind === "string" ? SESSION_STATE_BY_STATUS.get(kind.toLowerCase()) : undefined;
 }
 
 function request(method, params) {
@@ -167,6 +181,15 @@ export default Plugin.define({
             await reportSession(sessionID);
           }
           break;
+        case "session.status": {
+          const state = stateFromSessionStatus(data.status);
+          if (state) {
+            await reportState(state, sessionID);
+          } else {
+            await reportSession(sessionID);
+          }
+          break;
+        }
         case "session.execution.started":
         case "session.retry.scheduled":
         case "session.tool.called":
@@ -186,6 +209,7 @@ export default Plugin.define({
           break;
         case "session.execution.succeeded":
         case "session.execution.interrupted":
+        case "session.idle":
           await reportState("idle", sessionID);
           break;
         default:

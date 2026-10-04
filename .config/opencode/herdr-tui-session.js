@@ -70,7 +70,9 @@ export default Plugin.define({
       const route = context.ui.router.current();
       const sessionID = route?.type === "session" ? route.sessionID : undefined;
       const session =
-        typeof sessionID === "string" && sessionID ? context.data.session.get(sessionID) : undefined;
+        typeof sessionID === "string" && sessionID
+          ? context.data.session.get(sessionID)
+          : undefined;
       if (!session || context.data.session.root(sessionID) !== sessionID) {
         selectedSessionID = undefined;
         retryIndex = 0;
