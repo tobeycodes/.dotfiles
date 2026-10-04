@@ -145,7 +145,6 @@ cask "tripmode"
 cask "tuple"
 # Multimedia player
 cask "vlc"
-mas "Developer", id: 640199958
 mas "Numbers", id: 361304891
 mas "Xcode", id: 497799835
 go "cmd/go"
