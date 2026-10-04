@@ -18,5 +18,10 @@
   },
   "theme": {
     "name": "tokyonight"
+  },
+  "tabs": {
+    "mode": "on",
+    "layout": "vertical",
+    "indicators": "status"
   }
 }
