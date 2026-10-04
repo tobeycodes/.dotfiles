@@ -1,8 +1,10 @@
 {
-  "scripts": {
-    "format": "oxfmt"
-  },
   "devDependencies": {
+    "@prantlf/jsonlint": "^17.0.1",
     "oxfmt": "^0.67.0"
+  },
+  "scripts": {
+    "format": "oxfmt && bun run sort",
+    "sort": "jsonlint --sort-keys --in-place --indent 2 --trailing-newline '**/*.json' '.*/**/*.json' '!**/node_modules/**' '!.*/**/node_modules/**'"
   }
 }

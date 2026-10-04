@@ -1,19 +1,21 @@
 {
   "$schema": "https://opencode.ai/v2/cli.json",
-  "plugins": ["./herdr-tui-session.js"],
-  "theme": {
-    "name": "tokyonight"
-  },
-  "scroll": {
-    "acceleration": true
-  },
+  "animations": true,
   "diffs": {
     "wrap": "word"
   },
+  "plugins": [
+    "./herdr-tui-session.js"
+  ],
+  "scroll": {
+    "acceleration": true
+  },
   "session": {
-    "sidebar": "auto",
     "scrollbar": false,
+    "sidebar": "auto",
     "thinking": "show"
   },
-  "animations": true
+  "theme": {
+    "name": "tokyonight"
+  }
 }
