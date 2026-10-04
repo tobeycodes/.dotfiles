@@ -6,7 +6,7 @@ disable-model-invocation: false
 
 # Implement a Figma Design as Code (Design → Code)
 
-Use this skill to turn a Figma design into code in a target codebase. This is the **read-FROM-Figma** direction: pull design context out of Figma with `get_design_context`, then adapt it into the project's real stack. For the reverse direction — building or updating a design *in* Figma from code — use [figma-generate-design](../figma-generate-design/SKILL.md) instead.
+Use this skill to turn a Figma design into code in a target codebase. This is the **read-FROM-Figma** direction: pull design context out of Figma with `get_design_context`, then adapt it into the project's real stack. For the reverse direction — building or updating a design _in_ Figma from code — use [figma-generate-design](../figma-generate-design/SKILL.md) instead.
 
 This skill owns the **workflow** for design-to-code. Parameter mechanics (nodeId / fileKey / branchKey extraction, URL parsing, `format`/`query` options, response shape) live on the `get_design_context` tool description itself — follow them there.
 
