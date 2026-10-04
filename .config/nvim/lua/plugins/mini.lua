@@ -4,12 +4,10 @@ local gh = require 'config.pack'
 --  A collection of various small independent plugins/modules
 vim.pack.add { gh 'nvim-mini/mini.nvim' }
 
--- If a nerd font is available, load the icons module for pretty icons in various plugins.
-if vim.g.have_nerd_font then
-  require('mini.icons').setup()
-  -- Used for backwards compatibility with plugins that require `nvim-web-devicons` (e.g. telescope.nvim)
-  MiniIcons.mock_nvim_web_devicons()
-end
+-- Load the icons module for pretty icons in various plugins.
+require('mini.icons').setup()
+-- Used for backwards compatibility with plugins that require `nvim-web-devicons` (e.g. telescope.nvim)
+MiniIcons.mock_nvim_web_devicons()
 
 -- Better Around/Inside textobjects
 --
@@ -37,8 +35,7 @@ require('mini.surround').setup()
 --  You could remove this setup call if you don't like it,
 --  and try some other statusline plugin
 local statusline = require 'mini.statusline'
--- Set `use_icons` to true if you have a Nerd Font
-statusline.setup { use_icons = vim.g.have_nerd_font }
+statusline.setup { use_icons = true }
 
 -- You can configure sections in the statusline by overriding their
 -- default behavior. For example, here we set the section for
