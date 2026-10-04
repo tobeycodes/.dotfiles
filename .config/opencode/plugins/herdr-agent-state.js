@@ -2,11 +2,9 @@
 // managed by herdr; reinstalling or updating the integration overwrites this file.
 // add custom hooks/plugins beside this file instead of editing it.
 // HERDR_INTEGRATION_ID=opencode
-// HERDR_INTEGRATION_VERSION=11
-// Locally ported to the OpenCode V2 server plugin API.
+// HERDR_INTEGRATION_VERSION=13
 
 import net from "node:net";
-import { Plugin } from "@opencode/plugin";
 
 const SOURCE = "herdr:opencode";
 const AGENT = "opencode";
@@ -19,10 +17,10 @@ let reportedRootSessionID;
 const childSessions = new Map();
 const CHILD_EVENT_STATES = new Map([
   ["permission.asked", "blocked"],
-  ["form.created", "blocked"],
+  ["question.asked", "blocked"],
   ["permission.replied", "working"],
-  ["form.replied", "working"],
-  ["form.cancelled", "working"],
+  ["question.replied", "working"],
+  ["question.rejected", "working"],
 ]);
 
 function nextReportSeq() {
@@ -30,8 +28,10 @@ function nextReportSeq() {
   return reportSeq;
 }
 
-function sessionIDFromData(data) {
-  return typeof data?.sessionID === "string" && data.sessionID ? data.sessionID : undefined;
+function sessionIDFromProperties(properties) {
+  return typeof properties?.sessionID === "string" && properties.sessionID
+    ? properties.sessionID
+    : undefined;
 }
 
 const SESSION_STATE_BY_STATUS = new Map([
@@ -115,50 +115,52 @@ function reportState(state, sessionID) {
   return request("pane.report_agent", params);
 }
 
-export default Plugin.define({
-  id: "herdr.opencode.agent-state",
-  async setup(ctx) {
-    if (
-      process.env.HERDR_ENV !== "1" ||
-      !process.env.HERDR_SOCKET_PATH ||
-      !process.env.HERDR_PANE_ID
-    ) {
-      return;
-    }
+function ownsLocalLifecycle() {
+  const args = process.argv.slice(2);
+  const separator = args.indexOf("--");
+  if (separator !== -1) args.splice(separator);
+  if (args.some((arg) => arg === "--attach" || arg.startsWith("--attach="))) return false;
+  while (
+    args[0] === "--print-logs" ||
+    args[0] === "--log-level" ||
+    args[0]?.startsWith("--log-level=")
+  ) {
+    args.splice(0, args[0] === "--log-level" ? 2 : 1);
+  }
+  // These local clients have no TUI plugin. Shared servers and the TUI worker
+  // cannot identify their attached panes; their lifecycle belongs to each TUI.
+  return (
+    args[0] === "run" || (!["serve", "web", "attach"].includes(args[0]) && args.includes("--mini"))
+  );
+}
 
-    await ctx.session.hook("prompt", async ({ sessionID }) => {
-      const session = await ctx.session.get({ sessionID });
-      if (session.parentID) {
-        childSessions.set(sessionID, session.parentID);
+export const HerdrAgentStatePlugin = async () => {
+  if (
+    !ownsLocalLifecycle() ||
+    process.env.HERDR_ENV !== "1" ||
+    !process.env.HERDR_SOCKET_PATH ||
+    !process.env.HERDR_PANE_ID
+  ) {
+    return {};
+  }
+
+  return {
+    "chat.message": async ({ sessionID }) => {
+      if (sessionID && childSessions.has(sessionID)) {
         return;
       }
       await reportState("working", sessionID);
-    });
+    },
+    event: async ({ event }) => {
+      const type = event?.type;
+      const properties = event?.properties ?? {};
+      const sessionID = sessionIDFromProperties(properties);
 
-    const handleEvent = async (event) => {
-      // V2 subscriptions receive events from every server location.
-      if (
-        event.location &&
-        (event.location.directory !== ctx.location.directory ||
-          event.location.workspaceID !== ctx.location.workspaceID)
-      ) {
-        return;
+      const info = properties.info;
+      if (info?.id && info.parentID) {
+        childSessions.set(info.id, info.parentID);
       }
-      const type = event.type;
-      const data = type === "form.created" ? event.data.form : event.data;
-      const sessionID = sessionIDFromData(data);
-      if (!sessionID || !sessionID.startsWith("ses")) {
-        return;
-      }
-
-      if (type === "session.created" && data.parentID) {
-        childSessions.set(sessionID, data.parentID);
-      }
-      if (type === "session.deleted") {
-        childSessions.delete(sessionID);
-        return;
-      }
-      if (childSessions.has(sessionID)) {
+      if (sessionID && childSessions.has(sessionID)) {
         const state = CHILD_EVENT_STATES.get(type);
         if (state) {
           let rootSessionID = sessionID;
@@ -176,13 +178,13 @@ export default Plugin.define({
           // TUI plugin separately reports the root selected in this pane.
           reportedRootSessionID = sessionID;
           break;
-        case "session.viewed":
-          if (sessionID !== reportedRootSessionID) {
+        case "session.updated":
+          if (sessionID && sessionID !== reportedRootSessionID) {
             await reportSession(sessionID);
           }
           break;
         case "session.status": {
-          const state = stateFromSessionStatus(data.status);
+          const state = stateFromSessionStatus(properties.status);
           if (state) {
             await reportState(state, sessionID);
           } else {
@@ -190,50 +192,35 @@ export default Plugin.define({
           }
           break;
         }
-        case "session.execution.started":
-        case "session.retry.scheduled":
-        case "session.tool.called":
-        case "session.tool.success":
-        case "session.tool.failed":
+        case "tool.execute.before":
+        case "tool.execute.after":
         case "permission.replied":
-        case "form.replied":
-        case "form.cancelled":
-        case "session.compaction.started":
-        case "session.compaction.ended":
+        case "question.replied":
+        case "question.rejected":
+        case "session.compacted":
           await reportState("working", sessionID);
           break;
         case "permission.asked":
-        case "form.created":
-        case "session.execution.failed":
+        case "question.asked":
+        case "session.error":
           await reportState("blocked", sessionID);
           break;
-        case "session.execution.succeeded":
-        case "session.execution.interrupted":
         case "session.idle":
           await reportState("idle", sessionID);
+          break;
+        case "session.deleted":
           break;
         default:
           break;
       }
-    };
+    },
+  };
+};
 
-    const controller = new AbortController();
-    const subscription = (async () => {
-      for await (const event of ctx.event.subscribe({ signal: controller.signal })) {
-        await handleEvent(event);
-      }
-    })().catch((error) => {
-      if (!controller.signal.aborted) {
-        console.error(
-          "Herdr agent-state subscription stopped; reload the plugin to resume reporting.",
-          error,
-        );
-      }
-    });
-
-    return async () => {
-      controller.abort();
-      await subscription;
-    };
-  },
-});
+// V1 local run/Mini retain their server hooks. V1/V2 full TUIs own both
+// selection and lifecycle, including when attached to a shared remote server.
+export default {
+  id: "herdr.opencode",
+  server: HerdrAgentStatePlugin,
+  setup() {},
+};

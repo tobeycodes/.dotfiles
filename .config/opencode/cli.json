@@ -5,7 +5,8 @@
     "wrap": "word"
   },
   "plugins": [
-    "./herdr-tui-session.js"
+    "./herdr-tui-session.js",
+    "./herdr-opencode"
   ],
   "scroll": {
     "acceleration": true
