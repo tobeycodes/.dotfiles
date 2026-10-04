@@ -81,4 +81,12 @@ do
 
   -- Hide the start message.
   vim.opt.shortmess:append 'I'
+
+  -- Set the indentation options.
+  vim.g.editorconfig = true
+  vim.o.expandtab = true
+  vim.o.smartindent = true
+  vim.o.shiftwidth = 2
+  vim.o.tabstop = 2
+  vim.o.softtabstop = 2
 end
