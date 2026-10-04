@@ -121,7 +121,8 @@
     },
     "opencode.nvim": {
       "rev": "427dd9c64c90dfa05479c52e5d6c9febdf31f83c",
-      "src": "https://github.com/nickjvandyke/opencode.nvim"
+      "src": "https://github.com/nickjvandyke/opencode.nvim",
+      "version": ">=0.0.0"
     },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
