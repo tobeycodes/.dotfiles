@@ -138,5 +138,6 @@
       }
     }
   },
-  "share": "disabled"
+  "share": "disabled",
+  "shell": "/opt/homebrew/bin/fish"
 }
