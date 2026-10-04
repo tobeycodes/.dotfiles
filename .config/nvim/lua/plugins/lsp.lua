@@ -31,6 +31,9 @@ do
   vim.pack.add { gh 'j-hui/fidget.nvim' }
   require('fidget').setup {}
 
+  -- JSON schemas for jsonls
+  vim.pack.add { gh 'b0o/schemastore.nvim' }
+
   --  This function gets run when an LSP attaches to a particular buffer.
   --    That is to say, every time a new file is opened that is associated with
   --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -148,6 +151,19 @@ do
         },
       },
     },
+    ts_ls = {},
+    tailwindcss = {},
+    gopls = {},
+    rust_analyzer = {},
+    clojure_lsp = {},
+    jsonls = {
+      settings = {
+        json = {
+          schemas = require('schemastore').json.schemas(),
+          validate = { enable = true },
+        },
+      },
+    },
   }
 
   vim.pack.add {
@@ -175,6 +191,7 @@ do
   local ensure_installed = vim.tbl_keys(servers or {})
   vim.list_extend(ensure_installed, {
     -- You can add other tools here that you want Mason to install
+    'markdownlint',
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
