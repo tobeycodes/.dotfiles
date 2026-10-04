@@ -4,83 +4,90 @@
   "autoupdate": false,
   "lsp": true,
   "mcp": {
-    "cloudflare:": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://mcp.cloudflare.com/mcp"
-    },
-    "codegraph": {
-      "command": ["codegraph", "serve", "--mcp"],
-      "enabled": true,
-      "type": "local"
-    },
-    "context7": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp"
-    },
-    "figma": {
-      "enabled": false,
-      "type": "remote",
-      "url": "http://127.0.0.1:3845/mcp"
-    },
-    "grep_app": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://mcp.grep.app"
-    },
-    "incident": {
-      "enabled": false,
-      "type": "remote",
-      "url": "https://mcp.incident.io/mcp"
-    },
-    "linear": {
-      "enabled": false,
-      "type": "remote",
-      "url": "https://mcp.linear.app/mcp"
-    },
-    "open-computer-use": {
-      "command": ["open-computer-use", "mcp"],
-      "enabled": false,
-      "type": "local"
-    },
-    "posthog": {
-      "enabled": false,
-      "type": "remote",
-      "url": "https://mcp.posthog.com/mcp"
-    },
-    "resend": {
-      "enabled": false,
-      "type": "remote",
-      "url": "https://mcp.resend.com/mcp"
-    },
-    "tablepro": {
-      "command": ["/Applications/TablePro.app/Contents/MacOS/tablepro-mcp"],
-      "enabled": false,
-      "type": "local"
-    },
-    "uidotsh": {
-      "enabled": false,
-      "headers": {
-        "Authorization": "Bearer {env:UIDOTSH_TOKEN}"
-      },
-      "type": "remote",
-      "url": "https://ui.sh/mcp?agent=opencode"
-    },
-    "agentation": {
-      "type": "local",
-      "command": ["npx", "-y", "agentation-mcp", "server"]
-    },
-    "agentmail": {
-      "type": "remote",
-      "url": "https://mcp.agentmail.to/mcp",
-      "headers": {
-        "x-api-key": "{env:AGENTMAIL_API_KEY}"
-      }
-    },
     "servers": {
+      "agentation": {
+        "command": [
+          "npx",
+          "-y",
+          "agentation-mcp",
+          "server"
+        ],
+        "disabled": true,
+        "type": "local"
+      },
+      "agentmail": {
+        "disabled": true,
+        "headers": {
+          "x-api-key": "{env:AGENTMAIL_API_KEY}"
+        },
+        "type": "remote",
+        "url": "https://mcp.agentmail.to/mcp"
+      },
+      "cloudflare:": {
+        "disabled": true,
+        "type": "remote",
+        "url": "https://mcp.cloudflare.com/mcp"
+      },
+      "codegraph": {
+        "command": [
+          "codegraph",
+          "serve",
+          "--mcp"
+        ],
+        "disabled": false,
+        "type": "local"
+      },
+      "context7": {
+        "disabled": false,
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp"
+      },
+      "figma": {
+        "disabled": true,
+        "type": "remote",
+        "url": "http://127.0.0.1:3845/mcp"
+      },
+      "grep_app": {
+        "disabled": false,
+        "type": "remote",
+        "url": "https://mcp.grep.app"
+      },
+      "incident": {
+        "disabled": true,
+        "type": "remote",
+        "url": "https://mcp.incident.io/mcp"
+      },
+      "linear": {
+        "disabled": true,
+        "type": "remote",
+        "url": "https://mcp.linear.app/mcp"
+      },
+      "open-computer-use": {
+        "command": [
+          "open-computer-use",
+          "mcp"
+        ],
+        "disabled": true,
+        "type": "local"
+      },
+      "posthog": {
+        "disabled": true,
+        "type": "remote",
+        "url": "https://mcp.posthog.com/mcp"
+      },
+      "resend": {
+        "disabled": true,
+        "type": "remote",
+        "url": "https://mcp.resend.com/mcp"
+      },
+      "tablepro": {
+        "command": [
+          "/Applications/TablePro.app/Contents/MacOS/tablepro-mcp"
+        ],
+        "disabled": true,
+        "type": "local"
+      },
       "temporal": {
-        "type": "local",
         "command": [
           "/opt/homebrew/bin/uvx",
           "temporal-mcp-server",
@@ -88,22 +95,34 @@
           "localhost:7233",
           "--namespace",
           "default"
-        ]
+        ],
+        "disabled": true,
+        "type": "local"
+      },
+      "uidotsh": {
+        "disabled": true,
+        "headers": {
+          "Authorization": "Bearer {env:UIDOTSH_TOKEN}"
+        },
+        "type": "remote",
+        "url": "https://ui.sh/mcp?agent=opencode"
       }
     }
   },
-  "plugin": ["@plannotator/opencode@latest"],
   "permissions": [
     {
       "action": "external_directory",
-      "resource": "~/.agents/skills/*",
-      "effect": "allow"
+      "effect": "allow",
+      "resource": "~/.agents/skills/*"
     },
     {
       "action": "read",
-      "resource": "~/.agents/skills/*",
-      "effect": "allow"
+      "effect": "allow",
+      "resource": "~/.agents/skills/*"
     }
+  ],
+  "plugin": [
+    "@plannotator/opencode@latest"
   ],
   "provider": {
     "ollama": {
