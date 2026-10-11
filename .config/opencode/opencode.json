@@ -113,12 +113,12 @@
     {
       "action": "external_directory",
       "effect": "allow",
-      "resource": "~/.agents/skills/*"
+      "resource": "~/code/tobeycodes/.dotfiles/.agents/skills/*"
     },
     {
       "action": "read",
       "effect": "allow",
-      "resource": "~/.agents/skills/*"
+      "resource": "~/code/tobeycodes/.dotfiles/.agents/skills/*"
     }
   ],
   "plugin": [
