@@ -1,0 +1,53 @@
+#!/bin/bash
+
+set -euo pipefail
+
+usage() {
+  echo "Usage: cloudflare-dns {enable|disable|status} [network-service]"
+  echo 'Default network service: Wi-Fi'
+  echo 'Disable clears custom DNS and restores automatic DNS.'
+}
+
+if [[ $# -lt 1 || $# -gt 2 ]]; then
+  usage >&2
+  exit 1
+fi
+
+case "$1" in
+  enable|disable|status) ;;
+  -h|--help)
+    usage
+    exit 0
+    ;;
+  *)
+    usage >&2
+    exit 1
+    ;;
+esac
+
+if [[ ! -x /usr/sbin/networksetup ]]; then
+  echo 'cloudflare-dns requires macOS and /usr/sbin/networksetup.' >&2
+  exit 1
+fi
+
+service="${2:-Wi-Fi}"
+servers=(1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001)
+
+case "$1" in
+  enable)
+    /usr/sbin/networksetup -setdnsservers "$service" "${servers[@]}"
+    ;;
+  disable)
+    /usr/sbin/networksetup -setdnsservers "$service" Empty
+    ;;
+esac
+
+current=$(/usr/sbin/networksetup -getdnsservers "$service")
+expected=$(printf '%s\n' "${servers[@]}")
+
+if [[ "$current" == "$expected" ]]; then
+  printf 'Cloudflare DNS: enabled on %s (IPv4 + IPv6)\n' "$service"
+else
+  printf 'Cloudflare DNS: not configured as the full preset on %s\n' "$service"
+fi
+printf 'Current custom DNS settings:\n%s\n' "$current"
