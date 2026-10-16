@@ -1,7 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoshare": false,
-  "autoupdate": false,
   "lsp": true,
   "mcp": {
     "servers": {
@@ -121,10 +119,10 @@
       "resource": "~/code/tobeycodes/.dotfiles/.agents/skills/*"
     }
   ],
-  "plugin": [
+  "plugins": [
     "@plannotator/opencode@latest"
   ],
-  "provider": {
+  "providers": {
     "ollama": {
       "models": {
         "qwen3-coder-next": {
@@ -132,12 +130,13 @@
         }
       },
       "name": "Ollama (local)",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
         "baseURL": "http://localhost:11434/v1"
       }
     }
   },
   "share": "disabled",
-  "shell": "/opt/homebrew/bin/fish"
+  "shell": "/opt/homebrew/bin/fish",
+  "update": "disable"
 }

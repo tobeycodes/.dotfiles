@@ -16,12 +16,12 @@
     "sidebar": "auto",
     "thinking": "show"
   },
+  "tabs": {
+    "indicators": "status",
+    "layout": "vertical",
+    "mode": "on"
+  },
   "theme": {
     "name": "tokyonight"
-  },
-  "tabs": {
-    "mode": "on",
-    "layout": "vertical",
-    "indicators": "status"
   }
 }
