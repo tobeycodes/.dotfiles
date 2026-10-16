@@ -122,20 +122,6 @@
   "plugins": [
     "@plannotator/opencode@latest"
   ],
-  "providers": {
-    "ollama": {
-      "models": {
-        "qwen3-coder-next": {
-          "name": "Qwen3 Coder Next"
-        }
-      },
-      "name": "Ollama (local)",
-      "package": "aisdk:@ai-sdk/openai-compatible",
-      "settings": {
-        "baseURL": "http://localhost:11434/v1"
-      }
-    }
-  },
   "share": "disabled",
   "shell": "/opt/homebrew/bin/fish",
   "update": "disable"
