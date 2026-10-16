@@ -1,10 +1,12 @@
 {
   "trustedformulae": [
     "anomalyco/tap/opencode",
+    "anomalyco/tap/opencode-v2",
     "clojure/tools/clojure",
     "temporalio/prerelease/temporal-cloud"
   ],
   "trustedtaps": [
+    "abue-ammar/tinycast",
     "anomalyco/tap",
     "felixkratz/formulae",
     "nikitabobko/tap",
