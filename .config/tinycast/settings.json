@@ -1,0 +1,204 @@
+{
+  "ai": {
+    "commands": {},
+    "enabled": false,
+    "newChatAfterMinutes": 5,
+    "opensTo": "recent",
+    "retentionDays": "forever",
+    "systemPrompt": "",
+    "systemPromptEnabled": true,
+    "toolRounds": 25,
+    "webSearch": false
+  },
+  "appearance": {
+    "compactMode": false,
+    "dragToReposition": false,
+    "followCursorAcrossDisplays": true,
+    "interfaceSize": "standard",
+    "showFavoritesInCompactMode": true,
+    "theme": "system"
+  },
+  "appleShortcuts": {
+    "enabled": false
+  },
+  "applications": {
+    "apps": {},
+    "enabled": true,
+    "searchScopes": [
+      "/Applications",
+      "/Applications/Utilities",
+      "/System/Applications",
+      "/System/Applications/Utilities",
+      "/System/Library/CoreServices/Applications",
+      "/System/Volumes/Preboot/Cryptexes/App/System/Applications",
+      "/System/Library/CoreServices/Finder.app",
+      "~/Applications"
+    ]
+  },
+  "calculator": {
+    "numberStyle": "system"
+  },
+  "calendar": {
+    "autoJoinConfirms": true,
+    "autoJoinNamedProvidersOnly": false,
+    "commands": {},
+    "hideCurrentEventAfterMinutes": "never",
+    "joinWindowMinutes": 5,
+    "launcherLimit": 5,
+    "meetingBrowser": null,
+    "menuBar": "disabled",
+    "menuBarHidesWhenEmpty": false,
+    "menuBarLinkedEventsOnly": true,
+    "menuBarUpcomingEvents": "today",
+    "showInLauncher": true,
+    "span": "todayAndTomorrow"
+  },
+  "clipboard": {
+    "commands": {},
+    "defaultAction": "paste",
+    "disabledApps": [
+      "com.apple.keychainaccess",
+      "com.apple.Passwords"
+    ],
+    "enabled": true,
+    "retentionDays": 90
+  },
+  "commands": {
+    "builtIn": {},
+    "builtInEnabled": true,
+    "enabled": false,
+    "showInLauncher": true
+  },
+  "dictation": {
+    "adaptsCapitalization": true,
+    "destination": "paste",
+    "language": null,
+    "microphone": null,
+    "mode": "toggle",
+    "model": "redux",
+    "releaseAfterMinutes": 1,
+    "shortcut": null
+  },
+  "emoji": {
+    "commands": {},
+    "gridColumns": 8,
+    "skinTone": "none"
+  },
+  "extensions": {
+    "showInLauncher": true
+  },
+  "fileSearch": {
+    "commands": {},
+    "enabled": false,
+    "ignorePatterns": [],
+    "scopes": [
+      "~"
+    ]
+  },
+  "general": {
+    "autoSwitchInputSource": null,
+    "automaticallyCheckForUpdates": true,
+    "escapeKeyBehavior": "navigateBackOrClose",
+    "launcherShortcut": "cmd+space",
+    "popToRootSeconds": 0,
+    "showInMenuBar": true,
+    "supportReminders": true
+  },
+  "hyperKey": {
+    "includesShift": true,
+    "key": "none",
+    "quickPress": "none"
+  },
+  "navigation": {
+    "commands": {},
+    "enabled": false,
+    "menuSearchDisabledApps": [],
+    "menuSearchShowsAppleMenu": false
+  },
+  "notes": {
+    "commands": {},
+    "enabled": false,
+    "folder": null,
+    "rendersMarkdown": true,
+    "showsFormattingBar": true
+  },
+  "quickActions": {
+    "commands": {},
+    "targetLanguage": ""
+  },
+  "quicklinks": {
+    "commands": {},
+    "confirmsBeforeDelete": true,
+    "enabled": false,
+    "opensNewWindow": false,
+    "selectionFallback": "ask",
+    "showInLauncher": true
+  },
+  "search": {
+    "sensitivity": "medium",
+    "showsSuggestions": true
+  },
+  "snippets": {
+    "commands": {},
+    "folder": null,
+    "showInLauncher": true
+  },
+  "systemActions": {
+    "actions": {},
+    "enabled": true
+  },
+  "systemSettings": {
+    "enabled": true,
+    "panes": {}
+  },
+  "windowManagement": {
+    "aliases": {},
+    "commands": {},
+    "customSizes": [],
+    "cycle": "off",
+    "enabled": false,
+    "gap": 0,
+    "layouts": [],
+    "layoutsShowInLauncher": true,
+    "rooms": [],
+    "roomsShowInLauncher": true,
+    "shortcuts": {
+      "almost-maximize": null,
+      "bottom-half": null,
+      "bottom-left-quarter": null,
+      "bottom-right-quarter": null,
+      "center": null,
+      "center-half": null,
+      "center-third": null,
+      "center-two-thirds": null,
+      "first-third": null,
+      "first-three-fourths": null,
+      "first-two-thirds": null,
+      "last-third": null,
+      "last-three-fourths": null,
+      "last-two-thirds": null,
+      "left-half": null,
+      "make-larger": null,
+      "make-smaller": null,
+      "maximize": null,
+      "maximize-height": null,
+      "maximize-width": null,
+      "move-down": null,
+      "move-left": null,
+      "move-right": null,
+      "move-up": null,
+      "next-display": null,
+      "next-space": null,
+      "previous-display": null,
+      "previous-space": null,
+      "reasonable-size": null,
+      "restore": null,
+      "right-half": null,
+      "toggle-fullscreen": null,
+      "top-half": null,
+      "top-left-quarter": null,
+      "top-right-quarter": null
+    },
+    "showInLauncher": true
+  }
+}
