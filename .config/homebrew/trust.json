@@ -13,5 +13,8 @@
     "teamookla/speedtest",
     "txtx/taps",
     "withgraphite/tap"
+  ],
+  "trustedcasks": [
+    "anomalyco/tap/hex"
   ]
 }

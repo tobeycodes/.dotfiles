@@ -62,6 +62,8 @@ brew "gh"
 brew "git"
 # Open-source GitLab command-line tool
 brew "glab"
+# Grammar Checker for Developers
+brew "harper"
 # Agent multiplexer that lives in your terminal
 brew "herdr"
 # Git-compatible distributed version control system
@@ -164,10 +166,6 @@ cask "audacity"
 cask "cap"
 # Video editing and image design platform
 cask "capcut"
-# Terminal-based AI coding assistant
-cask "claude-code@latest"
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
 # Voice and text chat software
 cask "discord"
 # Collaborative team software
@@ -181,8 +179,10 @@ cask "ghostty"
 cask "google-chrome"
 # AI-powered notepad for meetings
 cask "granola"
-# Speech to text application
-cask "handy"
+# Grammar checker for developers
+cask "harper-desktop"
+# Local-first voice dictation
+cask "anomalyco/tap/hex", trusted: true
 # Open-source keystroke visualiser
 cask "keycastr"
 # App to manage software development and track bugs
