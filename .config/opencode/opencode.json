@@ -21,7 +21,7 @@
         "type": "remote",
         "url": "https://mcp.agentmail.to/mcp"
       },
-      "cloudflare:": {
+      "cloudflare": {
         "disabled": true,
         "type": "remote",
         "url": "https://mcp.cloudflare.com/mcp"
