@@ -161,48 +161,36 @@ url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/g
 url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
 
 [[tools.java]]
-version = "27.0.0+35"
+version = "27.0.1.0.2"
 backend = "core:java"
 specifiers = ["latest"]
 
 [tools.java.options]
-shorthand_vendor = "temurin"
+shorthand_vendor = "openjdk"
 
 [tools.java."platforms.linux-arm64"]
-checksum = "sha256:e4ec5c7276290c7bde0baecba9a29be4962f5388684296406a9799d465936087"
-url = "https://github.com/adoptium/temurin27-binaries/releases/download/jdk-27%2B35/OpenJDK27U-jdk_aarch64_linux_hotspot_27_35.tar.gz"
-
-[tools.java."platforms.linux-arm64-musl"]
-checksum = "sha256:440353d641e7726396dff5d9a9d0d17c05a070dc25664c20f9d7efafc2f16cf7"
-url = "https://github.com/adoptium/temurin27-binaries/releases/download/jdk-27%2B35/OpenJDK27U-jdk_aarch64_alpine-linux_hotspot_27_35.tar.gz"
+checksum = "sha256:8057b0bdc1742438c50b69f7a4544d10712e6585e4760f9846aca6bb70d35d72"
+url = "https://download.java.net/java/GA/jdk27.0.1.0.2/924dbdccfc234bb9b9355d7c6b66034b/1/GPL/openjdk-27.0.1.0.2_linux-aarch64_bin.tar.gz"
 
 [tools.java."platforms.linux-x64"]
-checksum = "sha256:1cf69a4848ffb728b3b260dfd45206a51566ab571a02a30092271d4c580bccbc"
-url = "https://github.com/adoptium/temurin27-binaries/releases/download/jdk-27%2B35/OpenJDK27U-jdk_x64_linux_hotspot_27_35.tar.gz"
+checksum = "sha256:e69ee3937022c1caa8eaa32a586955ba13c109ad6986a6a1a7f1d5e6fa8998e3"
+url = "https://download.java.net/java/GA/jdk27.0.1.0.2/924dbdccfc234bb9b9355d7c6b66034b/1/GPL/openjdk-27.0.1.0.2_linux-x64_bin.tar.gz"
 
 [tools.java."platforms.linux-x64-baseline"]
-checksum = "sha256:1cf69a4848ffb728b3b260dfd45206a51566ab571a02a30092271d4c580bccbc"
-url = "https://github.com/adoptium/temurin27-binaries/releases/download/jdk-27%2B35/OpenJDK27U-jdk_x64_linux_hotspot_27_35.tar.gz"
-
-[tools.java."platforms.linux-x64-musl"]
-checksum = "sha256:45aef7cd5ae667c6f5dd100c96a99e5a00e61c512664bb13326cf149b7d37e0f"
-url = "https://github.com/adoptium/temurin27-binaries/releases/download/jdk-27%2B35/OpenJDK27U-jdk_x64_alpine-linux_hotspot_27_35.tar.gz"
-
-[tools.java."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:45aef7cd5ae667c6f5dd100c96a99e5a00e61c512664bb13326cf149b7d37e0f"
-url = "https://github.com/adoptium/temurin27-binaries/releases/download/jdk-27%2B35/OpenJDK27U-jdk_x64_alpine-linux_hotspot_27_35.tar.gz"
+checksum = "sha256:e69ee3937022c1caa8eaa32a586955ba13c109ad6986a6a1a7f1d5e6fa8998e3"
+url = "https://download.java.net/java/GA/jdk27.0.1.0.2/924dbdccfc234bb9b9355d7c6b66034b/1/GPL/openjdk-27.0.1.0.2_linux-x64_bin.tar.gz"
 
 [tools.java."platforms.macos-arm64"]
-checksum = "sha256:a59626c926f0146a286cb535fc9a46499d6c46b3d79ae72168bbf18438fe49dd"
-url = "https://github.com/adoptium/temurin27-binaries/releases/download/jdk-27%2B35/OpenJDK27U-jdk_aarch64_mac_hotspot_27_35.tar.gz"
+checksum = "sha256:26d0712e378b7e5ef47cea0c424ba113daf4bc9f28377023fa073c4ee3225933"
+url = "https://download.java.net/java/GA/jdk27.0.1.0.2/924dbdccfc234bb9b9355d7c6b66034b/1/GPL/openjdk-27.0.1.0.2_macos-aarch64_bin.tar.gz"
 
 [tools.java."platforms.windows-x64"]
-checksum = "sha256:2031c9c5c624737ed29a0624caaf5bcc25e74235834c28b4bfa88f7ba7a40e4a"
-url = "https://github.com/adoptium/temurin27-binaries/releases/download/jdk-27%2B35/OpenJDK27U-jdk_x64_windows_hotspot_27_35.zip"
+checksum = "sha256:dd57fc9519f739b19d354c3be2d8fd18c0fdbc1b8a81bc85cc2f61dacdcb8ebd"
+url = "https://download.java.net/java/GA/jdk27.0.1.0.2/924dbdccfc234bb9b9355d7c6b66034b/1/GPL/openjdk-27.0.1.0.2_windows-x64_bin.zip"
 
 [tools.java."platforms.windows-x64-baseline"]
-checksum = "sha256:2031c9c5c624737ed29a0624caaf5bcc25e74235834c28b4bfa88f7ba7a40e4a"
-url = "https://github.com/adoptium/temurin27-binaries/releases/download/jdk-27%2B35/OpenJDK27U-jdk_x64_windows_hotspot_27_35.zip"
+checksum = "sha256:dd57fc9519f739b19d354c3be2d8fd18c0fdbc1b8a81bc85cc2f61dacdcb8ebd"
+url = "https://download.java.net/java/GA/jdk27.0.1.0.2/924dbdccfc234bb9b9355d7c6b66034b/1/GPL/openjdk-27.0.1.0.2_windows-x64_bin.zip"
 
 [[tools.node]]
 version = "24.22.1"
