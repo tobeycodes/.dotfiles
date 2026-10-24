@@ -1,4 +1,7 @@
 {
+  "trustedcasks": [
+    "anomalyco/tap/hex"
+  ],
   "trustedformulae": [
     "anomalyco/tap/opencode",
     "anomalyco/tap/opencode-v2",
@@ -13,8 +16,5 @@
     "teamookla/speedtest",
     "txtx/taps",
     "withgraphite/tap"
-  ],
-  "trustedcasks": [
-    "anomalyco/tap/hex"
   ]
 }
