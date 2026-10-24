@@ -3,14 +3,18 @@ tap "anomalyco/tap", trusted: true
 tap "felixkratz/formulae", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "temporalio/prerelease"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3", link: true
+# Mozilla CA certificate store
+brew "ca-certificates"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # Platform keystore credential helper for Docker
 brew "docker-credential-helper"
 # Simple, fast and user-friendly alternative to find
@@ -87,16 +91,12 @@ brew "temporalio/prerelease/temporal-cloud", trusted: true
 cask "1password"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
-# Chromium based browser
-cask "arc"
 # Use your phone as a high-quality webcam with image tuning controls
 cask "camo-studio"
 # Screen recording software
 cask "cap"
 # Terminal-based AI coding assistant
 cask "claude-code"
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
 # Collaborative team software
 cask "figma"
 # Web browser
