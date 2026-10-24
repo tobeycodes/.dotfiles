@@ -7,5 +7,5 @@
 [gpg "ssh"]
   program = /usr/bin/ssh-keygen
 
-[url "squads-github.com:"]
-  insteadOf = git@github.com:
+[core]
+  sshCommand = ssh -i ~/.ssh/squads -o IdentitiesOnly=yes
