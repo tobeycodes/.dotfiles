@@ -8,6 +8,9 @@ python = "latest"
 ruby = "latest"
 rust = "latest"
 
+[settings]
+lockfile = true
+
 [settings.github]
 credential_command = 'gh auth token --hostname "$MISE_CREDENTIAL_HOST"'
 use_git_credentials = true
