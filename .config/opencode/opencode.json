@@ -96,14 +96,6 @@
         ],
         "disabled": true,
         "type": "local"
-      },
-      "uidotsh": {
-        "disabled": true,
-        "headers": {
-          "Authorization": "Bearer {env:UIDOTSH_TOKEN}"
-        },
-        "type": "remote",
-        "url": "https://ui.sh/mcp?agent=opencode"
       }
     }
   },
