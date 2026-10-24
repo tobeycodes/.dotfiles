@@ -1,20 +1,20 @@
 {
-  "dependencies": {
-    "@colbymchenry/codegraph": "^1.6.2",
-    "@earendil-works/pi-coding-agent": "^1.3.0",
-    "@kitlangton/ghui": "^0.9.1",
-    "@kitlangton/skulk": "^0.1.0",
-    "agent-browser": "^0.39.1",
-    "agentmail-cli": "^1.9.0",
-    "eas-cli": "^25.0.0",
-    "hunkdiff": "^0.23.0",
-    "open-computer-use": "^1.1.1",
-    "openlogs": "^0.0.4",
-    "portless": "^0.15.8",
-    "skills": "^1.7.2"
-  },
   "trustedDependencies": [
     "@opencode/cli",
     "agentmail-cli"
-  ]
+  ],
+  "dependencies": {
+    "@colbymchenry/codegraph": "^1.6.2",
+    "@earendil-works/pi-coding-agent": "^1.4.0",
+    "@kitlangton/ghui": "^0.9.1",
+    "@kitlangton/skulk": "^0.1.0",
+    "agent-browser": "^0.39.2",
+    "agentmail-cli": "^1.10.0",
+    "eas-cli": "^25.3.0",
+    "hunkdiff": "^0.24.0",
+    "open-computer-use": "^1.1.2",
+    "openlogs": "^0.0.4",
+    "portless": "^0.15.11",
+    "skills": "^1.7.4"
+  }
 }
