@@ -15,7 +15,7 @@ Check your tools before you run any command below. If you have a tool named `pla
 
 The tool returns at once. End your turn after you call it and wait: the reviewer's decision arrives later as a message. Do not also run the CLI, poll, or reopen the session.
 
-Use the CLI only when you have no such tool, or for what the tool does not do: `archive`, `guide`, `sessions`, review flags other than `--base`, annotate flags other than `--gate` and `--markdown`, and strict gates that a script checks by exit code (`--require-approval`, `--result-file`).
+Use the CLI only when you have no such tool, or for what the tool does not do: `archive`, `guide`, `sessions`, review flags other than `--base` and `--gate`, annotate flags other than `--gate` and `--markdown`, and strict gates that a script checks by exit code (`--require-approval`, `--result-file`).
 
 ## Choose the command
 
@@ -50,7 +50,7 @@ Stdout is the interface, but its contract is command-specific. For `annotate` an
 ## plannotator review
 
 ```bash
-plannotator review [--git | --gitbutler] [--base <ref>] [--diff-type <type>] [--local | --no-local] [--patch-file <path | ->] [--no-git-remote-check] [--tailscale] [--json] [DIRECTORY | PR_URL]
+plannotator review [--git | --gitbutler] [--base <ref>] [--diff-type <type>] [--local | --no-local] [--patch-file <path | ->] [--no-git-remote-check] [--tailscale] [--gate] [--json] [DIRECTORY | PR_URL]
 ```
 
 Reviews local VCS changes, or a pull request when a URL is given. Default stdout stays plaintext: the existing close message, approval prompt, or feedback.
@@ -68,6 +68,7 @@ Classify the outcome only by `decision`, never by `message` text. Notes on an `a
 - PR review (`plannotator review https://github.com/owner/repo/pull/123`, GitLab MR and Bitbucket Cloud PR URLs too) needs an authenticated `gh` or `glab` CLI; Bitbucket Cloud (`https://bitbucket.org/<workspace>/<repo>/pull-requests/<id>`) instead needs an Atlassian API token in `PLANNOTATOR_BITBUCKET_TOKEN` (plus `PLANNOTATOR_BITBUCKET_EMAIL`). `--local` (the default) builds a local checkout of the PR head in the background for full file access; `--no-local` skips it and reviews the platform diff only.
 - `--no-git-remote-check` stops the session contacting the git remote at all: no `git ls-remote` for the default branch or the "behind GitHub" baseline check. The compare target then comes from local refs only and the staleness banner never shows, which also takes away its one-click Fetch button (the `/api/fetch-base` endpoint stays available); fetching from a terminal is unaffected. Use it when a remote probe is expensive or intrusive — most sharply when SSH authentication is backed by a hardware token, where each probe is a physical touch prompt. The same opt-out is available session-wide as `PLANNOTATOR_GIT_REMOTE_CHECK=0` or `{ "gitRemoteCheck": false }` in `~/.plannotator/config.json` (the flag beats the env var, which beats the config key). Without it the remote is queried when the review opens, on diff load, on a diff-type/base switch, and on Fetch — never on a timer.
 - `--tailscale` publishes the loopback session over the user's tailnet via `tailscale serve` (HTTPS, never public) and prints the URL with a QR code. A publish failure exits nonzero instead of leaving the server hanging.
+- `--gate` says you are waiting for the reviewer's sign-off before going on (committing, opening the PR): a bare Approve then reaches you too. With a `plannotator` tool, pass `gate: true` on the `review` action instead.
 
 ## plannotator annotate
 
@@ -176,7 +177,7 @@ plannotator inbox [--background | --no-open] [--tailscale]
 plannotator inbox mcp
 ```
 
-The Plannotator Inbox is one local window per machine where you leave the person messages, `:::question` blocks they answer with a click, files to annotate, decisions and guided reviews. Nothing blocks: you send, then keep working or end your turn.
+The Plannotator Inbox is one local window per machine where you leave the person messages, `:::question` blocks they answer with a click, files to annotate and guided reviews. Nothing blocks: you send, then keep working or end your turn.
 
 - Use it when the person may not be watching this chat: a decision only they can make (a `:::question` block, then go on with work that does not depend on it), long work you finished (one short summary, with the files to look at in `attachments`), or when they ask. Ask in the chat when they are there, and do not send routine progress. Use a review (plan review, `annotate`, `review`) when you need a decision on this document or diff before you go on.
 - If you have a `plannotator_inbox` tool, use it; otherwise use the stdio MCP server `plannotator inbox mcp`. With the tool, the person's reply arrives in your session by itself, so end your turn instead of waiting.
@@ -208,7 +209,7 @@ plannotator improve-context
 | `PLANNOTATOR_AI=disabled`    | Disable Ask AI and agent-launched review surfaces in the UI.                                                                                                                                                                                        |
 | `PLANNOTATOR_SHARE=disabled` | Disable URL sharing, including guide share links.                                                                                                                                                                                                   |
 | `PLANNOTATOR_DATA_DIR`       | Move the data directory (default `~/.plannotator`): plans, history, drafts, config.                                                                                                                                                                 |
-| `PLANNOTATOR_BROWSER`        | Open sessions in a specific browser.                                                                                                                                                                                                                |
+| `PLANNOTATOR_BROWSER`        | Open sessions in a specific browser; `none` opens no browser at all (the session URL is always printed on stderr).                                                                                                                                  |
 | `PLANNOTATOR_UPDATE_CHECK=0` | No automatic check for a newer release (and no update notices or auto-update). `plannotator update` still checks when run.                                                                                                                          |
 
 ## Posting annotations into a live session
