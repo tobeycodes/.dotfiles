@@ -7,7 +7,7 @@
     "agent-browser": "^0.39.2",
     "agentmail-cli": "^1.10.0",
     "eas-cli": "^25.3.0",
-    "hunkdiff": "^0.24.0",
+    "hunkdiff": "^0.24.1",
     "open-computer-use": "^1.1.2",
     "openlogs": "^0.0.4",
     "portless": "^0.15.11",
