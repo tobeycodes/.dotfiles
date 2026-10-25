@@ -118,8 +118,6 @@ cask "lulu"
 cask "microsoft-edge"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-# VPN client for secure internet access and private browsing
-cask "nordvpn"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -128,8 +126,6 @@ cask "obsidian"
 cask "opencode-desktop"
 # Design tool for creating interfaces and prototypes
 cask "paper-design"
-# VPN client focusing on security
-cask "protonvpn"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
