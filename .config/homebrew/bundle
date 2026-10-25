@@ -2,6 +2,7 @@ tap "abue-ammar/tinycast", trusted: true
 tap "anomalyco/tap", trusted: true
 tap "clojure/tools"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
+tap "kitlangton/tap"
 tap "nikitabobko/tap", trusted: true
 tap "teamookla/speedtest", trusted: true
 tap "txtx/taps", trusted: true
@@ -148,6 +149,8 @@ brew "anomalyco/tap/opencode-v2", trusted: true
 brew "clojure/tools/clojure", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
+# Power-aware macOS keep-awake CLI
+brew "kitlangton/tap/modafinil", trusted: true
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 # CLI tool for managing contract deployments on any blockchain
@@ -213,6 +216,8 @@ cask "proton-mail-bridge"
 cask "protonvpn"
 # Free Dj app to prepare and manage your music files
 cask "rekordbox"
+# Record your screen, voice and drawings into compact bundles for coding agents
+cask "kitlangton/tap/scrawl", trusted: true
 # Instant messaging application focusing on security
 cask "signal"
 # Team communication and collaboration software

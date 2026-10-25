@@ -1,11 +1,13 @@
 {
   "trustedcasks": [
-    "anomalyco/tap/hex"
+    "anomalyco/tap/hex",
+    "kitlangton/tap/scrawl"
   ],
   "trustedformulae": [
     "anomalyco/tap/opencode",
     "anomalyco/tap/opencode-v2",
     "clojure/tools/clojure",
+    "kitlangton/tap/modafinil",
     "temporalio/prerelease/temporal-cloud"
   ],
   "trustedtaps": [
