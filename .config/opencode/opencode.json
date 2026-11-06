@@ -78,6 +78,16 @@
         "type": "remote",
         "url": "https://mcp.resend.com/mcp"
       },
+      "slack": {
+        "oauth": {
+          "callback_port": 19876,
+          "client_id": "{env:SLACK_MCP_CLIENT_ID}",
+          "client_secret": "{env:SLACK_MCP_CLIENT_SECRET}",
+          "redirect_uri": "http://127.0.0.1:19876/callback"
+        },
+        "type": "remote",
+        "url": "https://mcp.slack.com/mcp"
+      },
       "tablepro": {
         "command": [
           "/Applications/TablePro.app/Contents/MacOS/tablepro-mcp"
