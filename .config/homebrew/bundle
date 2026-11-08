@@ -267,3 +267,4 @@ mas "PDFgear", id: 6469021132
 mas "Xcode", id: 497799835
 go "cmd/go"
 go "cmd/gofmt"
+cargo "avm", source: "https://github.com/otter-sec/anchor"
