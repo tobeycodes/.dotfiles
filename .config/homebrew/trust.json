@@ -1,6 +1,7 @@
 {
   "trustedcasks": [
     "anomalyco/tap/hex",
+    "darrenburns/homebrew/posting@beta",
     "kitlangton/tap/scrawl"
   ],
   "trustedformulae": [

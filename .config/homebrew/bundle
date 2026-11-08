@@ -1,6 +1,7 @@
 tap "abue-ammar/tinycast", trusted: true
 tap "anomalyco/tap", trusted: true
 tap "clojure/tools"
+tap "darrenburns/homebrew"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
 tap "kitlangton/tap"
 tap "nikitabobko/tap", trusted: true
@@ -121,6 +122,8 @@ brew "subversion"
 brew "tmux"
 # CLI tool that moves files or folder to the trash
 brew "trash"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Extraction utility for .zip compressed archives
 brew "unzip"
 # Extremely fast Python package installer and resolver, written in Rust
@@ -216,6 +219,8 @@ cask "ollama-app"
 cask "opencode-desktop"
 # Replacement for Docker Desktop
 cask "orbstack"
+# The modern API client that lives in your terminal.
+cask "darrenburns/homebrew/posting@beta", trusted: true
 # Bridges Proton Mail to email clients supporting IMAP and SMTP protocols
 cask "proton-mail-bridge"
 # VPN client focusing on security
@@ -262,7 +267,3 @@ mas "PDFgear", id: 6469021132
 mas "Xcode", id: 497799835
 go "cmd/go"
 go "cmd/gofmt"
-cargo "avm", source: "https://github.com/coral-xyz/anchor"
-cargo "lazyjj"
-cargo "tree-sitter-cli"
-uv "posting"
