@@ -126,7 +126,7 @@
 
     "schemes": ["schemes@1.4.0", "", { "dependencies": { "extend": "^3.0.0" } }, "sha512-ImFy9FbCsQlVgnE3TCWmLPCFnVzx0lHL/l+umHplDqAKd0dzFpnS6lFZIpagBlYhKwzVmlV36ec0Y1XTu8JBAQ=="],
 
-    "smtp-address-parser": ["smtp-address-parser@1.1.0", "", { "dependencies": { "nearley": "^2.20.1" } }, "sha512-Gz11jbNU0plrReU9Sj7fmshSBxxJ9ShdD2q4ktHIHo/rpTH6lFyQoYHYKINPJtPe8aHFnsbtW46Ls0tCCBsIZg=="],
+    "smtp-address-parser": ["smtp-address-parser@1.1.1", "", { "dependencies": { "nearley": "^2.20.1" } }, "sha512-02QRuo0uL+I6+VHY5LxYiKJMjbyrTJWFM6JWkWOcdLkfInjLvGdPQTjC+mUOt/0PzeNnRSCYNIDZfn6QRIQYug=="],
 
     "tinypool": ["tinypool@2.1.2", "", {}, "sha512-9YodfrxS9g9IbFr/KOjE5bAeJ0p61n3bW6mqvy0jtoeKd1kTW1Cxm0oulm6KX2lyM9Gl6WIe8nEbY7LWv5ZJww=="],
 
