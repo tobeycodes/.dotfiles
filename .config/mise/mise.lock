@@ -101,64 +101,74 @@ checksum = "sha256:f26081f438319757f8a1b46d7d0b2c5ec7583d4038e485e0aa725cfde7885
 url = "https://dl.google.com/go/go1.27.3.windows-amd64.zip"
 
 [[tools.gradle]]
-version = "9.8.2"
+version = "9.9.0"
 backend = "aqua:gradle/gradle-distributions"
 specifiers = ["latest"]
 
 [tools.gradle."platforms.linux-arm64"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+checksum_source = "mise-versions"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [tools.gradle."platforms.linux-arm64-musl"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+checksum_source = "mise-versions"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [tools.gradle."platforms.linux-x64"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+checksum_source = "mise-versions"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [tools.gradle."platforms.linux-x64-baseline"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+checksum_source = "mise-versions"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [tools.gradle."platforms.linux-x64-musl"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+checksum_source = "mise-versions"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [tools.gradle."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+checksum_source = "mise-versions"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [tools.gradle."platforms.macos-arm64"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [tools.gradle."platforms.macos-x64"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+checksum_source = "mise-versions"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [tools.gradle."platforms.macos-x64-baseline"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+checksum_source = "mise-versions"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [tools.gradle."platforms.windows-x64"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+checksum_source = "mise-versions"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [tools.gradle."platforms.windows-x64-baseline"]
-checksum = "sha256:21bd5da2de49b642904077f38c0efdc7778e92b3ed0889392dca61b97e389607"
-url = "https://github.com/gradle/gradle-distributions/releases/download/v9.8.2/gradle-9.8.2-bin.zip"
-url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/656830895"
+checksum = "sha256:0b00b0ffe07c4d4789c12d4935a44a7057d55774b7540bd4a3f76f336deb177a"
+checksum_source = "mise-versions"
+url = "https://github.com/gradle/gradle-distributions/releases/download/v9.9.0/gradle-9.9.0-bin.zip"
+url_api = "https://api.github.com/repos/gradle/gradle-distributions/releases/assets/717698303"
 
 [[tools.java]]
 version = "27.0.1.0.2"
