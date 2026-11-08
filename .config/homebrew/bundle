@@ -133,6 +133,8 @@ brew "wget"
 brew "worktrunk"
 # Access X11 clipboards from the command-line
 brew "xclip"
+# Generate your Xcode project from a spec file and your folder structure
+brew "xcodegen"
 # Command-line program for getting and setting the contents of the X selection
 brew "xsel"
 # Feature-rich command-line audio/video downloader
@@ -167,6 +169,8 @@ cask "nikitabobko/tap/aerospace"
 cask "android-studio"
 # Multi-track audio editor and recorder
 cask "audacity"
+# Use your phone as a high-quality webcam with image tuning controls
+cask "camo-studio"
 # Screen recording software
 cask "cap"
 # Video editing and image design platform
@@ -180,13 +184,15 @@ cask "firefox"
 cask "font-jetbrains-mono-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Git client for simultaneous branches on top of your existing workflow
+cask "gitbutler"
 # Web browser
 cask "google-chrome"
 # AI-powered notepad for meetings
 cask "granola"
 # Grammar checker for developers
 cask "harper-desktop"
-# Local-first voice dictation
+# Local voice dictation
 cask "anomalyco/tap/hex", trusted: true
 # Open-source keystroke visualiser
 cask "keycastr"
@@ -238,8 +244,8 @@ cask "tailscale-app"
 cask "telegram"
 # Web browser
 cask "thebrowsercompany-dia"
-# Tiny, fully native launcher, hotkeys, and clipboard history
-cask "abue-ammar/tinycast/tinycast"
+# Application launcher and productivity tool
+cask "tinycast"
 # Charting and social-networking for investment traders
 cask "tradingview"
 # Remote pair programming app
@@ -260,4 +266,3 @@ cargo "avm", source: "https://github.com/coral-xyz/anchor"
 cargo "lazyjj"
 cargo "tree-sitter-cli"
 uv "posting"
-npm "corepack"
