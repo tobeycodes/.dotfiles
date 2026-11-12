@@ -132,8 +132,6 @@ brew "uv"
 brew "watchman"
 # Internet file retriever
 brew "wget"
-# CLI for Git worktree management, designed for parallel AI agent workflows
-brew "worktrunk"
 # Access X11 clipboards from the command-line
 brew "xclip"
 # Generate your Xcode project from a spec file and your folder structure

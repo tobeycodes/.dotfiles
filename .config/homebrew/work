@@ -76,8 +76,6 @@ brew "tree-sitter-cli"
 brew "unzip"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
-# CLI for Git worktree management, designed for parallel AI agent workflows
-brew "worktrunk"
 # Tool for managing your YubiKey configuration
 brew "ykman"
 # Shell extension to navigate your filesystem faster
