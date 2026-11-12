@@ -32,7 +32,6 @@ starship
 stow
 sudo
 tailscale
-tmux
 tree-sitter-cli
 ufw
 unzip

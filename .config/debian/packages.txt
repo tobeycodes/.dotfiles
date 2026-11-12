@@ -237,7 +237,6 @@ sysvinit-utils
 tailscale
 tailscale-archive-keyring
 tar
-tmux
 tree-sitter-cli
 tzdata
 udev

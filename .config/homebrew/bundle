@@ -116,8 +116,6 @@ brew "starship"
 brew "stow"
 # Version control system designed to be a better CVS
 brew "subversion"
-# Terminal multiplexer
-brew "tmux"
 # CLI tool that moves files or folder to the trash
 brew "trash"
 # Parser generator tool

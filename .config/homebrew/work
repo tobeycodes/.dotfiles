@@ -68,8 +68,6 @@ brew "stow"
 brew "tailscale"
 # Command-line interface for running and interacting with Temporal Server and UI
 brew "temporal"
-# Terminal multiplexer
-brew "tmux"
 # Parser generator tool
 brew "tree-sitter-cli"
 # Extraction utility for .zip compressed archives
