@@ -7,6 +7,7 @@
 [core]
   editor = nvim
   pager = hunk pager
+  sshCommand = ssh -i ~/.ssh/tobey.pub -o IdentitiesOnly=yes
 
 [fetch]
   prune = true

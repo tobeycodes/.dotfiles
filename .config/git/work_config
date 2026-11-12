@@ -8,4 +8,4 @@
   program = /usr/bin/ssh-keygen
 
 [core]
-  sshCommand = ssh -i ~/.ssh/squads -o IdentitiesOnly=yes
+  sshCommand = ssh -i ~/.ssh/squads.pub -o IdentitiesOnly=yes
