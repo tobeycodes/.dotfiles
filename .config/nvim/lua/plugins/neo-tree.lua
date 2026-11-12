@@ -38,7 +38,6 @@ require('neo-tree').setup {
       hide_gitignored = false,
       never_show = {
         '.git',
-        '.jj',
       },
     },
     use_libuv_file_watcher = true,

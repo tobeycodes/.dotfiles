@@ -13,10 +13,8 @@ fish
 fzf
 git
 github-cli
-jujutsu
 lazydocker
 lazygit
-lazyjj
 libyaml
 linux
 linux-firmware

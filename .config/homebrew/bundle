@@ -70,8 +70,6 @@ brew "glab"
 brew "harper"
 # Agent multiplexer that lives in your terminal
 brew "herdr"
-# Git-compatible distributed version control system
-brew "jj"
 # Handy way to save and run project-specific commands
 brew "just"
 # Lazier way to manage everything docker
