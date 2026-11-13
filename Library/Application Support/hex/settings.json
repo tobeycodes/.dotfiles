@@ -1,5 +1,13 @@
 {
   "avoid_bluetooth_microphone": true,
+  "cancel_hotkey": {
+    "keys": [
+      {
+        "code": 53,
+        "label": "Esc"
+      }
+    ]
+  },
   "capture": {
     "bundle_days": 30,
     "capsule_flow": "list",
@@ -22,6 +30,7 @@
       ]
     },
     "media_days": 7,
+    "replay_hotkey": null,
     "routing": {
       "agentHost": null,
       "agentOpencode": null,
@@ -79,6 +88,7 @@
     "hex_microphone_mode": "muffled",
     "hex_microphone_strength": 1
   },
+  "extra_dictation_hotkeys": [],
   "gnome_keyboard_shortcuts": false,
   "history_retention": "week",
   "indicator_position": "top",
@@ -87,30 +97,72 @@
     "mappings": {}
   },
   "labs": {
+    "annotate_replay": false,
+    "api_processing": false,
+    "api_timestamps": false,
+    "app_model_switching": false,
+    "appearance": false,
+    "appearance_theme": "system",
     "benchmark_details": false,
+    "caps_lock_dictation": false,
+    "caps_lock_light": "steady",
     "copy_only": false,
+    "double_tap_modifiers": false,
+    "expire_meeting_audio": false,
+    "failure_notices": false,
     "filler_words": true,
+    "follow_live_transcript": false,
+    "gnome_annotate": false,
+    "gnome_clipboard_restore": false,
+    "gnome_meeting_capsules": false,
+    "hide_menu_bar_icon": false,
     "history_stats": false,
     "keep_on_clipboard": false,
+    "keep_recordings": false,
     "live_chapters": false,
     "live_text": false,
+    "live_typing": false,
+    "meeting_descriptive_filenames": false,
+    "meeting_finished_event": false,
+    "meeting_import": false,
+    "meeting_notes_file": false,
+    "meeting_notes_vocabulary": false,
+    "model_in_place": false,
+    "more_call_apps": false,
+    "more_dictation_shortcuts": false,
     "mouse_shortcuts": false,
+    "movable_meeting_capsules": false,
+    "notch_indicator": false,
+    "opencode_in_wsl": false,
     "output_fixes": false,
     "parakeet_ultra": false,
+    "pause_menu": false,
+    "picker_active_first": false,
+    "picker_downloaded": false,
     "picker_sort_filter": false,
     "playground": false,
+    "quit_closes_window": false,
     "recent_dictations": false,
+    "release_notes_link": false,
     "restore_shortcut_default": false,
+    "return_to_app": false,
+    "screenshots": false,
     "second_dictation_shortcut": false,
+    "section_key_alone": false,
+    "settings_search": false,
     "sided_modifier_chords": false,
     "skip_pauses": false,
     "smart_spacing": false,
+    "speakers_only": false,
     "spoken_formatting": false,
     "spoken_symbols": false,
     "standalone_special_keys": false,
     "stop_when_call_ends": false,
     "subtitle_export": false,
     "tap_or_hold": false,
+    "terminal_paste_shortcut": false,
+    "transcribe_files": false,
+    "typed_text": false,
     "unload_idle": false,
     "unload_idle_minutes": 15,
     "vocabulary_biasing": false
@@ -127,8 +179,7 @@
     "providers": [],
     "recording_indicator_corner": "top_right",
     "show_recording_indicator": true,
-    "summarize_with_apple_intelligence": true,
-    "summarize_with_opencode": false
+    "summaries": "mac"
   },
   "microphone": null,
   "migrations": [
@@ -137,7 +188,8 @@
     "anomaly-hex-identity",
     "meeting-retention-default",
     "scrawl-capture-settings",
-    "scrawl-routing-settings"
+    "scrawl-routing-settings",
+    "meeting-summaries-choice"
   ],
   "paste_last_hotkey": {
     "keys": [
@@ -161,6 +213,26 @@
   "recording_audio_behavior": "do_nothing",
   "recording_duck_volume": 0.2,
   "release_microphone_while_idle": true,
+  "screenshots": {
+    "folder": null,
+    "hotkey": {
+      "keys": [
+        {
+          "modifier": "shift",
+          "side": "any"
+        },
+        {
+          "modifier": "command",
+          "side": "any"
+        },
+        {
+          "code": 21,
+          "label": "4"
+        }
+      ]
+    },
+    "record_hotkey": null
+  },
   "second_dictation_hotkey": null,
   "share_dictation_shortcut": false,
   "shortcut_mode": "hold",
@@ -168,6 +240,7 @@
   "sound_effect_volume": 0.5,
   "sound_effects": true,
   "sound_theme": "classic",
+  "terminal_paste_hotkey": null,
   "transcription": {
     "language": "en",
     "model": "parakeet_unified_en"
@@ -179,6 +252,7 @@
       "model": "parakeet_unified_en"
     }
   ],
+  "typed_text_hotkey": null,
   "ui_language": null,
   "updates": {
     "channel": null
