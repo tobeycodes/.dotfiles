@@ -115,6 +115,10 @@
     "gnome_annotate": false,
     "gnome_clipboard_restore": false,
     "gnome_meeting_capsules": false,
+    "groups": {
+      "models": true,
+      "shortcuts": true
+    },
     "hide_menu_bar_icon": false,
     "history_stats": false,
     "keep_on_clipboard": false,
@@ -155,9 +159,9 @@
     "smart_spacing": false,
     "speakers_only": false,
     "spoken_formatting": false,
-    "spoken_symbols": false,
+    "spoken_symbols": true,
     "standalone_special_keys": false,
-    "stop_when_call_ends": false,
+    "stop_when_call_ends": true,
     "subtitle_export": false,
     "tap_or_hold": false,
     "terminal_paste_shortcut": false,
@@ -210,7 +214,7 @@
   "paste_with_shift": false,
   "pause_browser_media": false,
   "raw_dictation_hotkey": null,
-  "recording_audio_behavior": "do_nothing",
+  "recording_audio_behavior": "duck",
   "recording_duck_volume": 0.2,
   "release_microphone_while_idle": true,
   "screenshots": {
