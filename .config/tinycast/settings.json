@@ -1,7 +1,9 @@
 {
   "ai": {
+    "choices": true,
     "commands": {},
     "enabled": false,
+    "expandsReasoning": false,
     "newChatAfterMinutes": 5,
     "opensTo": "recent",
     "retentionDays": "forever",
@@ -11,11 +13,17 @@
     "webSearch": false
   },
   "appearance": {
+    "animations": true,
+    "compactBarCommands": [
+      "command:clipboard-history",
+      "command:search-emoji",
+      "command:search-files",
+      "command:search-quicklinks"
+    ],
     "compactMode": false,
     "dragToReposition": false,
     "followCursorAcrossDisplays": true,
     "interfaceSize": "standard",
-    "showFavoritesInCompactMode": true,
     "theme": "system"
   },
   "appleShortcuts": {
@@ -73,9 +81,11 @@
     "adaptsCapitalization": true,
     "destination": "paste",
     "language": null,
+    "liveInsertion": false,
     "microphone": null,
     "mode": "toggle",
     "model": "redux",
+    "playsSounds": true,
     "releaseAfterMinutes": 1,
     "shortcut": null
   },
@@ -91,14 +101,17 @@
     "commands": {},
     "enabled": false,
     "ignorePatterns": [],
+    "removedDefaultPatterns": [],
     "scopes": [
       "~"
-    ]
+    ],
+    "showInLauncher": false
   },
   "general": {
     "autoSwitchInputSource": null,
     "automaticallyCheckForUpdates": true,
     "escapeKeyBehavior": "navigateBackOrClose",
+    "language": "en",
     "launcherShortcut": "cmd+space",
     "popToRootSeconds": 0,
     "showInMenuBar": true,
@@ -107,7 +120,8 @@
   "hyperKey": {
     "includesShift": true,
     "key": "none",
-    "quickPress": "none"
+    "quickPress": "none",
+    "secureInputCompatibility": false
   },
   "navigation": {
     "commands": {},
@@ -120,7 +134,8 @@
     "enabled": false,
     "folder": null,
     "rendersMarkdown": true,
-    "showsFormattingBar": true
+    "showsFormattingBar": true,
+    "showsInMenuBar": false
   },
   "quickActions": {
     "commands": {},
@@ -131,7 +146,7 @@
     "confirmsBeforeDelete": true,
     "enabled": false,
     "opensNewWindow": false,
-    "selectionFallback": "ask",
+    "passesSelectedText": false,
     "showInLauncher": true
   },
   "search": {
@@ -140,6 +155,7 @@
   },
   "snippets": {
     "commands": {},
+    "defaultAction": "paste",
     "folder": null,
     "showInLauncher": true
   },
@@ -158,6 +174,7 @@
     "cycle": "off",
     "enabled": false,
     "gap": 0,
+    "keepProportions": true,
     "layouts": [],
     "layoutsShowInLauncher": true,
     "rooms": [],
@@ -186,6 +203,10 @@
       "move-down": null,
       "move-left": null,
       "move-right": null,
+      "move-to-bottom-edge": null,
+      "move-to-left-edge": null,
+      "move-to-right-edge": null,
+      "move-to-top-edge": null,
       "move-up": null,
       "next-display": null,
       "next-space": null,
@@ -199,6 +220,7 @@
       "top-left-quarter": null,
       "top-right-quarter": null
     },
-    "showInLauncher": true
+    "showInLauncher": true,
+    "wrapDisplays": true
   }
 }
