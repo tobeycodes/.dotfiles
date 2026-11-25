@@ -2,7 +2,7 @@
   "defaultModel": "glm-5.3",
   "defaultProvider": "opencode-go",
   "defaultThinkingLevel": "high",
-  "lastChangelogVersion": "1.2.0",
+  "lastChangelogVersion": "1.6.1",
   "packages": [
     {
       "skills": [],
