@@ -1,5 +1,6 @@
 ---
 name: plannotator-visual-explainer
+disable-model-invocation: true
 description: >
   Generate self-contained HTML visualizations with Plannotator theming. Use for implementation
   plans, PR explainers, architecture diagrams, data tables, slide decks, and any visual
@@ -23,16 +24,24 @@ Three paths depending on content type. Each has its own references and structure
 
 Always deliver via Plannotator's annotation UI. Do NOT use `open` or `xdg-open`.
 
+For any deliverable that uses Mermaid, render every diagram with Mermaid 12 in both the light
+and dark palettes before opening the annotation UI. Rendering is a hard gate: an exception,
+empty SVG, or error output such as `aria-roledescription="error"` or `Syntax error in text`
+means the explainer is not deliverable. Fix the diagram or theme configuration and rerun both
+palettes until every SVG passes.
+
+For zoomable diagram shells, additionally zoom to the maximum and pan to all extremes in both palettes before delivering: the figure caption must stay fully legible throughout (see `references/diagram-shell.md`).
+
 **Plans/proposals** (user should approve/deny):
 
 ```bash
-plannotator annotate <file> --render-html --gate
+plannotator annotate <file> --gate
 ```
 
 **Everything else** (informational):
 
 ```bash
-plannotator annotate <file> --render-html
+plannotator annotate <file>
 ```
 
 ---
@@ -97,12 +106,15 @@ For architecture diagrams, data tables, slide decks, project recaps, comparisons
 
 1. Ensure `visual-explainer` is installed:
    - Check: `~/.claude/skills/visual-explainer/SKILL.md` or `~/.agents/skills/visual-explainer/SKILL.md`
-   - If not found: `npx skills add nicobailon/visual-explainer -g --yes`
+   - If not found: do not install it on your own. Stop and ask the person whether to install it, showing the exact command:
+     `npx skills add nicobailon/visual-explainer -g --yes`
+     Run it only after they agree (their yes is the consent; without `--yes` the installer waits for input your shell can't give). They can also run the command themselves if they prefer. If they decline, say this path needs visual-explainer and stop. The Plan and PR paths do not need it and work without it.
 2. Read visual-explainer's `SKILL.md` (workflow, diagram types, anti-slop rules)
 3. Read the relevant visual-explainer references and templates for your content type
 4. Read `references/theme-override.md` — Plannotator tokens replacing Nico's palettes
+5. For zoomable Mermaid diagrams with controls and a caption: read `references/diagram-shell.md` and copy its shell — do not hand-roll viewport, canvas, or caption markup
 
-Follow visual-explainer's structure, component classes (`.ve-card`, `.kpi-card`, `.pipeline`), and anti-slop rules. The only override is the color/typography layer — Plannotator tokens instead of Nico's custom palettes.
+Follow visual-explainer's structure, component classes (`.ve-card`, `.kpi-card`, `.pipeline`), and anti-slop rules. Overrides are the color/typography layer — Plannotator tokens instead of Nico's custom palettes — plus the zoomable diagram shell in `references/diagram-shell.md` when the deliverable has one.
 
 ---
 
