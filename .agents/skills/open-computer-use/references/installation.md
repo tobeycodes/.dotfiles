@@ -71,6 +71,60 @@ Codex App can also use the plugin installer:
 open-computer-use install-codex-plugin
 ```
 
+Install into DeepSeek Harness (DSH):
+
+```sh
+open-computer-use install-dsh-mcp
+ocu install-dsh-mcp
+
+# from a source checkout
+./scripts/install-dsh-mcp.sh
+```
+
+DSH profiles are composed from patch layers, so the installer writes a delimited
+block into `<dsh-home>/profiles/<profile>/cordis.patch.yml` (default profile
+`web`, default home `~/.dsh`). The block is replaced in place on every run, so
+re-running is idempotent and the rest of the file is untouched. Before writing,
+the installer performs an MCP `initialize` plus `tools/list` exchange and
+requires the Open Computer Use server identity and a non-empty, valid tool
+catalog. It deliberately does not pin a tool count, so compatible OCU releases
+can add or reshape tools. An unrelated or broken executable therefore fails
+without changing the profile.
+
+This is a compatibility integration through DSH's generic MCP client. It does
+not register a first-class DSH computer-use provider or reserve DSH's exclusive
+computer-use provider slot. Do not enable another desktop provider in the same
+profile unless you deliberately want both independent tool sets to operate the
+same desktop.
+
+It also installs two things a DSH host needs beyond the MCP entry:
+
+- **The turn-boundary hook.** Open Computer Use hides its software cursor only at
+  a turn boundary, signalled by the MCP `notifications/turn-ended` notification.
+  `dsh-mcp-client` never sends that notification, so without the hook the cursor
+  stays on screen after the first action of any session or subagent. The
+  installer writes `<dsh-home>/ocu-hooks.json` and maps DSH's Stop point onto
+  `open-computer-use turn-ended`. Pass `--no-hook` to skip both.
+- **Editing the hook later.** DSH's live patch reload only re-applies a row whose
+  configuration actually changed, so editing `ocu-hooks.json` on its own leaves
+  the running plugin holding its previous command. Change the patch row too (for
+  example `defaultTimeoutMs`) to force a re-apply, or restart DSH.
+- **The skill.** Copied to `<dsh-home>/skills/open-computer-use`, which DSH scans
+  as a user-level skill root, so every new conversation can see it. Pass
+  `--no-skill` to skip. An existing skill directory is never overwritten
+  silently: when it differs from this checkout the installer leaves it in place
+  and says so, and `--force-skill` replaces it while keeping a timestamped
+  backup.
+
+Options: `--profile <name>`, `--dsh-home <dir>`, `--command <path>`, `--no-hook`,
+`--no-skill`, `--force-skill`. `--command` must be an absolute executable path.
+DSH can resolve a bare PATH command, but an absolute path remains stable when a
+GUI or background launch receives a different PATH. When the option is omitted,
+the installer resolves the current PATH shim and common app/npm locations to an
+absolute path, then fails with guidance if it finds nothing. Explicit DSH
+installation treats MCP startup failure as a profile activation error rather
+than silently starting without the requested tools.
+
 For any other MCP client, add a stdio server manually:
 
 ```json
@@ -89,14 +143,14 @@ For any other MCP client, add a stdio server manually:
 Install the skill for Codex:
 
 ```sh
-npx skills add iFurySt/open-codex-computer-use -g -a codex --skill open-computer-use -y
+npx skills add iFurySt/open-computer-use -g -a codex --skill open-computer-use -y
 npx skills ls -g -a codex | rg 'open-computer-use'
 ```
 
 Install the skill for Claude Code:
 
 ```sh
-npx skills add iFurySt/open-codex-computer-use -g -a claude-code --skill open-computer-use -y
+npx skills add iFurySt/open-computer-use -g -a claude-code --skill open-computer-use -y
 ```
 
 Update an existing global skill install:
