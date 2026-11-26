@@ -3,16 +3,6 @@
   "lsp": true,
   "mcp": {
     "servers": {
-      "agentation": {
-        "command": [
-          "npx",
-          "-y",
-          "agentation-mcp",
-          "server"
-        ],
-        "disabled": true,
-        "type": "local"
-      },
       "agentmail": {
         "disabled": true,
         "headers": {
@@ -43,7 +33,7 @@
       "figma": {
         "disabled": true,
         "type": "remote",
-        "url": "http://127.0.0.1:3845/mcp"
+        "url": "https://mcp.figma.com/mcp"
       },
       "grep_app": {
         "disabled": false,
